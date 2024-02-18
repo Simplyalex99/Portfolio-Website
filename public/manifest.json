@@ -1,0 +1,16 @@
+{
+  "name": "Developer portfolio",
+  "short_name": "Developer portfolio",
+  "description": "Beautiful portfolio design",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#fff",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
