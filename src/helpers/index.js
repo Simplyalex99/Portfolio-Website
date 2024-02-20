@@ -1,0 +1,1 @@
+export { iconFactory } from './iconFactory';

@@ -1,0 +1,112 @@
+mainSection:
+  subheading: I am Alex
+  headingAccent: Beautiful
+  heading: UI/UX
+  description: >
+    I’ve worked on different open-source projects and have earned contributor roles, I am ready to bring my skills and provide the best quality code and take ownership for what I build. I also enjoy many other hobbies from rock climbing,
+    canoeing and skateboarding.
+  image: /images/skateboard.png
+  blurDataUrl:
+workSection:
+  images:
+    [/images/softwareforlove.png, /images/oasis.png, /images/openreview.png]
+  blurDataUrls: []
+  content:
+    - title: Softwareforlove
+      accent: spreading love
+      text: through software
+      testimonial: Alex had a huge impact to the team, I highly recommend him.
+      author: Avaneesh Madaram
+      jobType: Project Manager
+      description: >
+        Software For Love is a non-profit organization that focuses on providing software solutions.
+        As a developer, I collobarated with other developers in fixing bugs and implementing mock up designs into production for their website and
+        mentor new developers.
+      imageUrl: /images/softwareforlove.png
+      blurDataUrl: ''
+      linkUrl: https://github.com/Software-For-Love/software-for-love-site
+    - title: Oasis
+      accent: share experiences
+      text: with others
+      testimonial: He did a great job contributing to the team, if I could hire him, I would.
+      author: Henry Lecompte
+      jobType: Lead Software Developer
+      description: >
+        An open-source project of an online social media platform for developers to share their experience and find work easily. As a developer, I worked on both
+        the frontend and backend of the project using Next.js, TailwindCSS and TypeORM. I helped implement mock up designs,
+        refactor code, implement the backend authentication and fixed UI issues for different browser compatibility.
+      imageUrl: /images/oasis.png
+      blurDataUrl: ''
+      linkUrl: https://github.com/Simplyalex99/oasis
+    - title: OpenReview
+      description: >
+        A dashboard app designed to help businesses save time and make decisions with the help of machine learning
+        and natural language processing. The app identifies local competitors, predicts the sucess of the businesses
+        and provides sentimental analysis of customer reviews and more.
+      imageUrl: /images/openreview.png
+      blurDataUrl:
+      linkUrl: https://github.com/Simplyalex99/OpenReview
+      accent: experience satisfication
+      text: through A.I
+skillSection:
+  image: /images/coding.jpg
+  blurDataUrl: ''
+  content:
+    - subheading: Machine Learning
+      number: '01'
+      description: I have knowledge of machine learning algorithms, natural language processing techniques, and model optimization
+      icons:
+        - NUMPY
+        - MATPLOTLIB
+        - SCIKITLEARN
+        - TENSORFLOW
+        - PYTHON
+        - DOCKER
+        - PANDAS
+    - subheading: Frontend Development
+      number: '02'
+      description: I can implement mock-up designs to code, and have knowledge of front-end/back-end technologies, responsive design and optimizing webpages.
+      icons:
+        - JAVASCRIPT
+        - TYPESCRIPT
+        - REACT
+        - GITHUB
+        - JAVA
+        - HTML
+        - CSS
+        - FIGMA
+    - subheading: UI/UX
+      number: '03'
+      description: I am familiar with design principles such as whitespace, color and contrast and typography.
+
+missionSection:
+  images:
+    [
+      /images/beautiful-design.png,
+      /images/pixel-perfect.png,
+      /images/scalable-code.png,
+    ]
+  blurDataUrls: []
+  firstContent:
+    imageUrl: /images/beautiful-design.png
+    blurDataUrl: ''
+    firstText: I build
+    highlight: beautiful
+    secondText: web design experiences to build user trust and leave owners feeling proud of their websites
+  secondContent:
+    imageUrl: /images/pixel-perfect.png
+    blurDataUrl: ''
+    firstText: I aim for
+    highlight: pixel perfect
+    secondText: design from mockup to code to ensure that the website meets the company's expectations
+  thirdContent:
+    imageUrl: /images/scalable-code.png
+    blurDataUrl: ''
+    firstText: I write
+    highlight: scalable code
+    secondText: to save businesses time, money and prevent headaches for developers
+contactSection:
+  image: /images/snapback.png
+  blurDataUrl: ''
+  title: Let's start working together
+  subtitle: And create magic
