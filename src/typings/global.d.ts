@@ -64,6 +64,8 @@ declare module '*.yaml' {
       subtitle: string;
       image: string;
       blurDataUrl: string;
+      maskTitle: string;
+      maskSubtitle: string;
     };
   };
   export default yaml;
