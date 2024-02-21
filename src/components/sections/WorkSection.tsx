@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import homeStyles from '@/styles/components/Work.module.scss';
+import workStyles from '@/styles/components/Work.module.scss';
 import yaml from '@/templates/home.yaml';
 import { LinkIds } from '@/enums/index';
 import { Button } from '../common/Button';
@@ -11,55 +11,55 @@ export const WorkSection = (props: typeof yaml.workSection) => {
   const { content, blurDataUrls } = props;
 
   return (
-    <section className={homeStyles['work-section']}>
-      <div className={homeStyles['work-content-wrapper']} id={LinkIds.WORK_ID}>
+    <section className={workStyles['work-section']}>
+      <div className={workStyles['work-content-wrapper']} id={LinkIds.WORK_ID}>
         {content.map((data, index) => {
           const { imageUrl, linkUrl, description, text, title, accent } = data;
           return (
-            <div key={title} className={homeStyles['work-content']}>
-              <div className={homeStyles['work-img-wrapper']}>
-                <h2 className={homeStyles['work-heading']}>
+            <div key={title} className={workStyles['work-content']}>
+              <div className={workStyles['work-img-wrapper']}>
+                <h2 className={workStyles['work-heading']}>
                   {accent}
-                  <span className={homeStyles['work-accent']}>{text}</span>
+                  <span className={workStyles['work-accent']}>{text}</span>
                 </h2>
-                <div className={homeStyles['img-zoom']}>
+                <div className={workStyles['img-zoom']}>
                   <Image
                     alt="project image"
                     src={imageUrl}
                     fill
-                    className={homeStyles['work-img']}
+                    className={workStyles['work-img']}
                     sizes="(max-width: 768px) 5vw, (max-width: 1200px) 50vw, 33vw"
                     placeholder="blur"
                     blurDataURL={blurDataUrls[index]}
                   />
                 </div>
               </div>
-              <div className={homeStyles['work-text-content']}>
-                <p className={homeStyles['work-title']}>{title}</p>
-                <p className={homeStyles['work-description']}>{description}</p>
+              <div className={workStyles['work-text-content']}>
+                <p className={workStyles['work-title']}>{title}</p>
+                <p className={workStyles['work-description']}>{description}</p>
               </div>
-              <div className={homeStyles['work-link-btn-wrapper']}>
-                <Link href={linkUrl} className={homeStyles['work-link-btn']}>
+              <div className={workStyles['work-link-btn-wrapper']}>
+                <Link href={linkUrl} className={workStyles['work-link-btn']}>
                   <Button type="button" width="md">
                     See it
                   </Button>
                 </Link>
               </div>
-              <div className={homeStyles['testimonial-wrapper']}>
+              <div className={workStyles['testimonial-wrapper']}>
                 {data?.testimonial && (
-                  <div className={homeStyles.flex}>
-                    <span className={homeStyles['left-quote']}>
+                  <div className={workStyles.flex}>
+                    <span className={workStyles['left-quote']}>
                       {data.testimonial && <LeftQuoteSVG />}
                     </span>
-                    <span className={homeStyles.testimonial}>
+                    <span className={workStyles.testimonial}>
                       {data.testimonial}
                     </span>
                   </div>
                 )}
                 {data?.author && (
-                  <p className={homeStyles.author}>
+                  <p className={workStyles.author}>
                     - {data.author}{' '}
-                    <span className={homeStyles['job-type']}>
+                    <span className={workStyles['job-type']}>
                       , {data?.jobType}
                     </span>
                   </p>

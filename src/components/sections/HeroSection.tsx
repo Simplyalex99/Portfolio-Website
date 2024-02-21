@@ -1,8 +1,7 @@
 'use client';
-
 import Link from 'next/link';
 import Image from 'next/image';
-
+import { playfair, playfairSC } from '@/fonts';
 import { RightArrowSVG, Navigation, SEO } from '@/components';
 import yaml from '@/templates/home.yaml';
 import { useParallax } from '@/hooks';
@@ -62,9 +61,16 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
           data-direction="vertical"
         >
           <div className={homeStyles['heading-wrapper']}>
-            <p className={homeStyles['hero-subheading']}>{subheading}</p>
-            <h2 className={homeStyles['hero-heading']} id="hero-heading">
-              <span>{headingAccent}</span>
+            <p
+              className={`${homeStyles['hero-subheading']} ${playfairSC.className}`}
+            >
+              {subheading}
+            </p>
+            <h2
+              className={`${homeStyles['hero-heading']} ${playfairSC.className}`}
+              id="hero-heading"
+            >
+              <span className={playfair.className}>{headingAccent}</span>
               <br />
               {heading}
             </h2>

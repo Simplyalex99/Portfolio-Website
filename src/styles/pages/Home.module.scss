@@ -28,12 +28,11 @@
       .hero-subheading {
         font-size: 1.3rem;
         font-weight: 200;
-        font-family: 'Playfair Display SC', serif;
+
         letter-spacing: 0.5em;
         margin: 0;
       }
       .hero-heading {
-        font-family: 'Playfair Display SC', serif;
         font-size: 4.5rem;
         margin: 0;
         font-weight: 400;
@@ -41,7 +40,6 @@
         text-align: center;
         transition: 0.3s ease;
         span {
-          font-family: 'Playfair Display', serif;
           font-weight: 400;
           font-style: italic !important;
           text-transform: none;

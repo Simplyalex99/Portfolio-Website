@@ -12,9 +12,10 @@ export const Contact = async () => {
   data.blurDataUrl = blurDataURL;
 
   return (
-    <div className="wrapper">
+    <>
+      <SEO title="contact page" />
       <ContactSection {...data} />
-    </div>
+    </>
   );
 };
 export default Contact;
