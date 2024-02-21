@@ -1,21 +1,43 @@
-.contact-section {
-  margin: 0 auto;
-  width: auto;
+.wrapper {
   max-width: 1000px;
-  padding-top: 4em;
-  padding-bottom: 4em;
-  .title,
-  .subtitle {
-    font-weight: 400;
-    font-size: 5rem;
+  margin: 0 auto;
+}
+.title,
+.subtitle {
+  font-size: 5rem;
+  font-weight: 400;
+}
+.title {
+  margin-bottom: 0.5em;
+}
+.subtitle {
+  text-align: right;
+}
+.mask {
+  position: absolute;
+  mask-image: url('../../../public/mask-circle.svg');
+  mask-size: 40px;
+  mask-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  display: none;
+  .mask-content {
+    padding-top: 6em;
+
+    .title,
+    .subtitle {
+      color: #808080;
+    }
   }
-  .title {
-    margin-bottom: 1em;
-  }
-  .subtitle {
-    margin-top: 0.6em;
-    text-align: right;
-  }
+}
+.unmask-content {
+  padding-top: 6em;
+}
+.contact-section {
+  width: auto;
+
+  position: relative;
 
   .spacer {
     height: 1vh;
@@ -136,6 +158,9 @@
 }
 
 @media (min-width: 800px) {
+  .mask {
+    display: block;
+  }
   .contact-section {
     .grid {
       grid-template-columns: repeat(12, 1fr);
