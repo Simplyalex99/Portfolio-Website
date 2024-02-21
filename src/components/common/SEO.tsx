@@ -14,7 +14,7 @@ export const SEO: React.FC<SEOProps> = ({ title, description }) => {
       <meta name="description" content={description} />
       <meta name="theme-color" content="#FFF" />
       <link rel="manifest" href="/manifest.json" />
-      <link rel="icon" href="/logo.png" />
+      <link rel="icon" href="/images/logo.png" />
     </Head>
   );
 };
