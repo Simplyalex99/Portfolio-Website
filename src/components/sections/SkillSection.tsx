@@ -2,12 +2,18 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
+import { Playfair_Display_SC } from 'next/font/google';
 import skillStyles from '@/styles/components/Skills.module.scss';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import yaml from '@/templates/home.yaml';
 import { iconFactory } from '../../helpers/iconFactory';
 import { useParallax } from '@/hooks';
 import { LinkIds } from '@/enums';
+
+const playfairSC = Playfair_Display_SC({
+  subsets: ['latin'],
+  weight: ['400'],
+});
 
 export const SkillSection = (props: typeof yaml.skillSection) => {
   const ref = useRef(null);
@@ -59,7 +65,9 @@ export const SkillSection = (props: typeof yaml.skillSection) => {
             <h3 className={skillStyles.subheading}>{subheading}</h3>
             <div className={skillStyles['bullet-point']}>
               <div className={skillStyles.divider} />
-              <p className={skillStyles.number}>{number}</p>
+              <p className={`${skillStyles.number} ${playfairSC.className}`}>
+                {number}
+              </p>
             </div>
             <div className={skillStyles.content}>
               <p className={skillStyles.description}>{description}</p>

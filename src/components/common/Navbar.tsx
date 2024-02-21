@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link, { LinkProps } from 'next/link';
+import { playfair } from '@/fonts';
 import { Links } from '@/enums';
 import navbarStyles from '@/styles/components/Navbar.module.scss';
 import { HamburgerMenuSVG } from '../svg/common/HamburgerMenu';
@@ -58,7 +59,10 @@ export const Navbar = () => {
           </div>
 
           <Link href={HOME_PATH}>
-            <button type="button" className={`${navbarStyles['custom-link']}`}>
+            <button
+              type="button"
+              className={`${navbarStyles['custom-link']} ${playfair.className}`}
+            >
               MyPortfolio
             </button>
           </Link>
