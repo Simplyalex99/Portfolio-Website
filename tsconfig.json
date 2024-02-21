@@ -26,7 +26,8 @@
       "@/styles/*": ["./src/styles/*"],
       "@/config": ["./src/config/secrets"],
       "@/serverUtils": ["./src/serverUtils/index"],
-      "@/helpers": ["./src/helpers/index"]
+      "@/helpers": ["./src/helpers/index"],
+      "@/fonts": ["./src/fonts/index"]
     }
   },
   "include": [
