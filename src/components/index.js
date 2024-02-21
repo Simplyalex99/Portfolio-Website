@@ -1,5 +1,3 @@
-export { DownLeftArrowSVG } from './svg/arrows/DownLeftArrow';
-export { DownRightArrowSVG } from './svg/arrows/DownRightArrow';
 export { DownArrowSVG } from './svg/arrows/DownArrow';
 export { RightArrowSVG } from './svg/arrows/RightArrow';
 export { CloseSVG } from './svg/common/Close';
