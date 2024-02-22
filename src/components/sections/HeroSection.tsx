@@ -111,7 +111,7 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
               alt="my hobby"
               id={imageId}
               width={400}
-              height={800}
+              height={650}
               sizes="(min-width: 1740px) 534px, (min-width: 1100px) 29.03vw, (min-width: 600px) 500px, calc(94.29vw - 47px)"
               className={homeStyles.img}
               placeholder="blur"
