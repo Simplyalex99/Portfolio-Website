@@ -30,9 +30,9 @@ export const MissionSection = (props: typeof yaml.missionSection) => {
               fill
               placeholder="blur"
               blurDataURL={blurDataUrls[0]}
-              sizes="(max-width: 768px) 5vw, (max-width: 1200px) 10vw, 50vw"
+              sizes="(min-width: 2000px) 317px, (min-width: 860px) calc(20.89vw - 17px), (min-width: 740px) 334px, (min-width: 400px) 46.88vw, calc(17.5vw + 108px)"
               alt="beautiful web design"
-              className={`${missionStyles.img} ${missionStyles['img-1']}`}
+              className={missionStyles.img}
               src={firstContent.imageUrl}
             />
           </div>
@@ -54,8 +54,8 @@ export const MissionSection = (props: typeof yaml.missionSection) => {
               fill
               placeholder="blur"
               blurDataURL={blurDataUrls[2]}
-              sizes="(max-width: 768px) 5vw, (max-width: 1200px) 10vw, 50vw"
-              className={`${missionStyles.img}  ${missionStyles['img-2']}`}
+              sizes="(min-width: 2000px) 317px, (min-width: 860px) calc(20.89vw - 17px), (min-width: 740px) 334px, (min-width: 400px) 46.88vw, calc(17.5vw + 108px)"
+              className={missionStyles.img}
               src={thirdContent.imageUrl}
               alt="camera"
             />
@@ -77,9 +77,9 @@ export const MissionSection = (props: typeof yaml.missionSection) => {
               fill
               placeholder="blur"
               blurDataURL={blurDataUrls[1]}
-              sizes="(max-width: 768px) 5vw, (max-width: 1200px) 10vw, 50vw"
+              sizes="(min-width: 2000px) 317px, (min-width: 860px) calc(20.89vw - 17px), (min-width: 740px) 334px, (min-width: 400px) 46.88vw, calc(17.5vw + 108px)"
               alt="coding"
-              className={`${missionStyles.img}  ${missionStyles['img-3']}`}
+              className={missionStyles.img}
               src={secondContent.imageUrl}
             />
           </div>
