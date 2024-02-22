@@ -25,9 +25,9 @@ export const SkillSection = (props: typeof yaml.skillSection) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['end start', 'start end'],
+    offset: ['start end', 'end start'],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 250]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const { image, blurDataUrl, content } = props;
 
   useParallax();
