@@ -183,7 +183,7 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
                   />
                   {errors?.name && <ErrorFieldMessage fieldName="name" />}
                 </fieldset>
-                <fieldset className={contactStyles.group}>
+                <div className={contactStyles.group}>
                   <label
                     htmlFor="email"
                     className={contactStyles.label}
@@ -201,7 +201,7 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
                     onBlur={() => onFocusOutHandler(labelIds.email)}
                   />
                   {errors?.email && <ErrorFieldMessage fieldName="email" />}
-                </fieldset>
+                </div>
                 <fieldset className={contactStyles.group}>
                   <label
                     htmlFor="message"
