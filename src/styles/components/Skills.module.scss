@@ -6,7 +6,6 @@
 
 .skill-section {
   margin: 0 auto;
-  margin-top: 12em;
   max-width: 800px;
   width: auto;
   padding: 2em 0;
@@ -32,7 +31,9 @@
   font-size: 5rem;
   transition: 0.3s ease;
   cursor: text;
-  margin: 0;
+
+  margin-bottom: 1em;
+  margin-top: 1em;
   &:hover {
     color: transparent;
     -webkit-text-stroke-width: 1px;
