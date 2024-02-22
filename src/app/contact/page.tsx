@@ -14,6 +14,7 @@ export const Contact = async () => {
   return (
     <>
       <SEO title="contact page" />
+
       <ContactSection {...data} />
     </>
   );

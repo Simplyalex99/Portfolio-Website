@@ -110,8 +110,9 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
               src={image}
               alt="my hobby"
               id={imageId}
-              fill
-              sizes="(max-width: 768px) 10vw, (max-width: 1200px) 50vw, 33vw"
+              width={400}
+              height={800}
+              sizes="(min-width: 1740px) 534px, (min-width: 1100px) 29.03vw, (min-width: 600px) 500px, calc(94.29vw - 47px)"
               className={homeStyles.img}
               placeholder="blur"
               blurDataURL={blurDataUrl}

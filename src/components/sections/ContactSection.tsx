@@ -1,12 +1,18 @@
 'use client';
 import Image from 'next/image';
 import React, { useRef, useState } from 'react';
-import { useScroll, useTransform, motion } from 'framer-motion';
+import {
+  useScroll,
+  useTransform,
+  m,
+  domAnimation,
+  LazyMotion,
+} from 'framer-motion';
 import contactStyles from '@/styles/pages/Contact.module.scss';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import tokens from '@/config';
-import { Links } from '@/enums';
+import { LinkIds, Links } from '@/enums';
 import emailjs from '@emailjs/browser';
 import yaml from '@/templates/home.yaml';
 import { useMousePosition } from '@/hooks';
@@ -80,54 +86,58 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
   const { MEDIUM_LINK, GITHUB_LINK, LINKEDIN_LINK } = Links;
   return (
     <div>
-      <motion.div
-        className={contactStyles.mask}
-        animate={{
-          WebkitMaskPosition: `${position.x - size / 2}px ${position.y - size / 2}px`,
+      <LazyMotion features={domAnimation}>
+        <m.div
+          className={contactStyles.mask}
+          animate={{
+            WebkitMaskPosition: `${position.x - size / 2}px ${position.y - size / 2}px`,
 
-          WebkitMaskSize: `${size}px`,
-        }}
-        transition={{ type: 'tween', ease: 'backOut', duration: 0.5 }}
-      >
-        <div
-          className={`${contactStyles.wrapper} ${contactStyles['mask-content']}`}
+            WebkitMaskSize: `${size}px`,
+          }}
+          transition={{ type: 'tween', ease: 'backOut', duration: 0.5 }}
         >
-          <div className="wrapper">
-            <h2
-              className={`${contactStyles.title} `}
-              onMouseEnter={() => {
-                setIsHovered(true);
-              }}
-              onMouseLeave={() => {
-                setIsHovered(false);
-              }}
-            >
-              {maskTitle}
-            </h2>
-            <div className={contactStyles.bounce}>
-              <DownArrowSVG />
+          <div
+            className={`${contactStyles.wrapper} ${contactStyles['mask-content']}`}
+          >
+            <div className="wrapper">
+              <h2
+                className={`${contactStyles.title} `}
+                onMouseEnter={() => {
+                  setIsHovered(true);
+                }}
+                onMouseLeave={() => {
+                  setIsHovered(false);
+                }}
+              >
+                {maskTitle}
+              </h2>
+              <div className={contactStyles.bounce}>
+                <DownArrowSVG />
+              </div>
+              <h2
+                className={`${contactStyles.subtitle} `}
+                onMouseEnter={() => {
+                  setIsHovered(true);
+                }}
+                onMouseLeave={() => {
+                  setIsHovered(false);
+                }}
+              >
+                {maskSubtitle}
+              </h2>
             </div>
-            <h2
-              className={`${contactStyles.subtitle} `}
-              onMouseEnter={() => {
-                setIsHovered(true);
-              }}
-              onMouseLeave={() => {
-                setIsHovered(false);
-              }}
-            >
-              {maskSubtitle}
-            </h2>
           </div>
-        </div>
-      </motion.div>
+        </m.div>
+      </LazyMotion>
       <div
         className={`${contactStyles['unmask-content']} ${contactStyles.wrapper}`}
       >
         <div className="wrapper">
           <h2 className={contactStyles.title}>{title}</h2>
           <div className={contactStyles.bounce}>
-            <DownArrowSVG />
+            <Link href={`#${LinkIds.CONTACT_ID}`}>
+              <DownArrowSVG />
+            </Link>
           </div>
           <h2 className={contactStyles.subtitle}>{subtitle}</h2>
         </div>
@@ -140,22 +150,26 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
           <div>
             <div className={contactStyles.spacer} />
             <div className={contactStyles['scroll-content']} ref={scrollRef}>
-              <motion.div style={{ y }} className={contactStyles.page}>
-                <div className={contactStyles['img-wrapper']}>
-                  <Image
-                    fill
-                    className={contactStyles.img}
-                    src={image}
-                    alt="mac computer coding screen"
-                    placeholder="blur"
-                    blurDataURL={blurDataUrl}
-                  />
-                </div>
-              </motion.div>
+              <LazyMotion features={domAnimation}>
+                <m.div style={{ y }} className={contactStyles.page}>
+                  <div className={contactStyles['img-wrapper']}>
+                    <Image
+                      width={900}
+                      height={700}
+                      className={contactStyles.img}
+                      src={image}
+                      sizes="(min-width: 1020px) 904px, calc(95.43vw - 50px)"
+                      alt="mac computer coding screen"
+                      placeholder="blur"
+                      blurDataURL={blurDataUrl}
+                    />
+                  </div>
+                </m.div>
+              </LazyMotion>
             </div>
             <div className={contactStyles.spacer} />
           </div>
-          <div className={contactStyles.grid}>
+          <div className={contactStyles.grid} id={LinkIds.CONTACT_ID}>
             <div className={contactStyles['grid-item-form']}>
               <form
                 ref={ref}
@@ -183,7 +197,7 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
                   />
                   {errors?.name && <ErrorFieldMessage fieldName="name" />}
                 </fieldset>
-                <fieldset className={contactStyles.group}>
+                <div className={contactStyles.group}>
                   <label
                     htmlFor="email"
                     className={contactStyles.label}
@@ -201,7 +215,7 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
                     onBlur={() => onFocusOutHandler(labelIds.email)}
                   />
                   {errors?.email && <ErrorFieldMessage fieldName="email" />}
-                </fieldset>
+                </div>
                 <fieldset className={contactStyles.group}>
                   <label
                     htmlFor="message"

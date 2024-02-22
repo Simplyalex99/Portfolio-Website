@@ -26,9 +26,10 @@ export const WorkSection = (props: typeof yaml.workSection) => {
                   <Image
                     alt="project image"
                     src={imageUrl}
-                    fill
+                    height={300}
+                    width={800}
                     className={workStyles['work-img']}
-                    sizes="(max-width: 768px) 5vw, (max-width: 1200px) 50vw, 33vw"
+                    sizes="(min-width: 920px) 800px, calc(94vw - 46px)"
                     placeholder="blur"
                     blurDataURL={blurDataUrls[index]}
                   />

@@ -1,5 +1,3 @@
-export { DownLeftArrowSVG } from './svg/arrows/DownLeftArrow';
-export { DownRightArrowSVG } from './svg/arrows/DownRightArrow';
 export { DownArrowSVG } from './svg/arrows/DownArrow';
 export { RightArrowSVG } from './svg/arrows/RightArrow';
 export { CloseSVG } from './svg/common/Close';
@@ -29,6 +27,8 @@ export { Footer } from './common/Footer';
 export { Navbar } from './common/Navbar';
 export { SEO } from './common/SEO';
 export { PrimaryLayout } from './layouts/PrimaryLayout';
+
+export { WithPageTransition } from './layouts/WithPageTransition';
 export { ContactSection } from './sections/ContactSection';
 export { SkillSection } from './sections/SkillSection';
 export { WorkSection } from './sections/WorkSection';

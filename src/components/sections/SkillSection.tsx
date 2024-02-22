@@ -4,7 +4,13 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import { Playfair_Display_SC } from 'next/font/google';
 import skillStyles from '@/styles/components/Skills.module.scss';
-import { useScroll, useTransform, motion } from 'framer-motion';
+import {
+  useScroll,
+  useTransform,
+  LazyMotion,
+  m,
+  domAnimation,
+} from 'framer-motion';
 import yaml from '@/templates/home.yaml';
 import { iconFactory } from '../../helpers/iconFactory';
 import { useParallax } from '@/hooks';
@@ -32,21 +38,24 @@ export const SkillSection = (props: typeof yaml.skillSection) => {
       <div>
         <div className={skillStyles.spacer} />
         <div className={skillStyles['scroll-content']} ref={ref}>
-          <motion.div style={{ y }} className={skillStyles.page}>
-            <div
-              style={{ height: '100%', width: '100%', position: 'relative' }}
-            >
-              <Image
-                height={300}
-                width={300}
-                className={skillStyles.img}
-                src={image}
-                alt="mac computer coding screen"
-                placeholder="blur"
-                blurDataURL={blurDataUrl}
-              />
-            </div>
-          </motion.div>
+          <LazyMotion features={domAnimation}>
+            <m.div style={{ y }} className={skillStyles.page}>
+              <div
+                style={{ height: '100%', width: '100%', position: 'relative' }}
+              >
+                <Image
+                  height={600}
+                  width={800}
+                  className={skillStyles.img}
+                  src={image}
+                  alt="mac computer coding screen"
+                  sizes="(min-width: 1740px) 534px, (min-width: 1100px) 29.03vw, (min-width: 600px) 500px, calc(94.29vw - 47px)"
+                  placeholder="blur"
+                  blurDataURL={blurDataUrl}
+                />
+              </div>
+            </m.div>
+          </LazyMotion>
         </div>
         <div className={skillStyles.spacer} />
       </div>
