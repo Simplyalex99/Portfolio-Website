@@ -30,8 +30,9 @@ export const Home = async () => {
 
   return (
     <>
+      <SEO title="about Alex" description="beautiful portfolio  design" />
+
       <div className="wrapper">
-        <SEO title="about Alex" description="beautiful portfolio  design" />
         <HeroSection {...data.mainSection} />
         <WorkSection {...data.workSection} />
       </div>
