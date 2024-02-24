@@ -1,14 +1,15 @@
 'use client';
 
 import React from 'react';
-import { LazyMotion, m, domAnimation } from 'framer-motion';
+import { LazyMotion, m } from 'framer-motion';
+import { loadFeatures } from '@/helpers';
 export const WithPageTransition = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
   return (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={loadFeatures}>
       <m.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

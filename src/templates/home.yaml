@@ -55,26 +55,66 @@ skillSection:
     - subheading: Machine Learning
       number: '01'
       description: I have knowledge of machine learning algorithms, natural language processing techniques, and model optimization
-      icons:
-        - NUMPY
-        - MATPLOTLIB
-        - SCIKITLEARN
-        - TENSORFLOW
-        - PYTHON
-        - DOCKER
-        - PANDAS
+      images:
+        - imageUrl: /svgs/numpy.svg
+          width: 30
+          height: 30
+          alt: numpy
+        - imageUrl: /svgs/scikitlearn.svg
+          width: 40
+          height: 40
+          alt: scikitlearn
+        - imageUrl: /svgs/tensorflow.svg
+          width: 30
+          height: 30
+          alt: tensorflow
+        - imageUrl: /svgs/python.svg
+          width: 30
+          height: 30
+          alt: python
+        - imageUrl: /svgs/docker.svg
+          width: 30
+          height: 30
+          alt: docker
+        - imageUrl: /svgs/pandas.svg
+          height: 30
+          width: 80
+          alt: pandas
     - subheading: Frontend Development
       number: '02'
       description: I can implement mock-up designs to code, and have knowledge of front-end/back-end technologies, responsive design and optimizing webpages.
-      icons:
-        - JAVASCRIPT
-        - TYPESCRIPT
-        - REACT
-        - GITHUB
-        - JAVA
-        - HTML
-        - CSS
-        - FIGMA
+      images:
+        - imageUrl: /svgs/javascript.svg
+          width: 30
+          height: 30
+          alt: javascript
+        - imageUrl: /svgs/typescript.svg
+          width: 30
+          height: 30
+          alt: typescript
+        - imageUrl: /svgs/react.svg
+          height: 30
+          width: 30
+          alt: react
+        - imageUrl: /svgs/github.svg
+          width: 30
+          height: 30
+          alt: github
+        - imageUrl: /svgs/java.svg
+          height: 30
+          width: 30
+          alt: java
+        - imageUrl: /svgs/html.svg
+          width: 30
+          height: 30
+        - imageUrl: /svgs/css.svg
+          width: 30
+          height: 30
+          alt: css
+        - imageUrl: /svgs/figma.svg
+          width: 30
+          height: 40
+          alt: figma
     - subheading: UI/UX
       number: '03'
       description: I am familiar with design principles such as whitespace, color and contrast and typography.
@@ -112,3 +152,12 @@ contactSection:
   subtitle: And create magic
   maskTitle: Create memorable experiences
   maskSubtitle: And dynamic pages
+  modalSuccess:
+    title: Success
+    description: Your form submission was successfully sent. Thanks for
+      reaching out to me, I will get back to you as soon as
+      possible.
+  modalError:
+    title: Error
+    description: Oops, looks like something went wrong. Try reaching out to me
+      via Linkedin or try again at a different time.

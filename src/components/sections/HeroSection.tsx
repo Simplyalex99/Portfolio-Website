@@ -2,7 +2,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { playfair, playfairSC } from '@/fonts';
-import { RightArrowSVG, Navigation, SEO } from '@/components';
+import { RightArrowSVG } from '../svg/arrows/RightArrow';
+import { Navigation } from '../others/Navigation';
 import yaml from '@/templates/home.yaml';
 import { useParallax } from '@/hooks';
 import homeStyles from '@/styles/pages/Home.module.scss';
@@ -53,7 +54,6 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
 
   return (
     <>
-      <SEO title="about Alex" description="beautiful portfolio  design" />
       <section className={homeStyles.hero}>
         <div
           className={`scroll ${homeStyles['hero-content']}`}
@@ -115,6 +115,7 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
               sizes="(min-width: 1740px) 534px, (min-width: 1100px) 29.03vw, (min-width: 600px) 500px, calc(94.29vw - 47px)"
               className={homeStyles.img}
               placeholder="blur"
+              priority
               blurDataURL={blurDataUrl}
             />
           </div>

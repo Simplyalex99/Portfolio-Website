@@ -1,1 +1,1 @@
-export { iconFactory } from './iconFactory';
+export { loadFeatures } from './loadFeatures';

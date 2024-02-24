@@ -1,27 +1,21 @@
 'use client';
+
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import React, { useRef, useState } from 'react';
-import {
-  useScroll,
-  useTransform,
-  m,
-  domAnimation,
-  LazyMotion,
-} from 'framer-motion';
+import { useScroll, useTransform, m, LazyMotion } from 'framer-motion';
 import contactStyles from '@/styles/pages/Contact.module.scss';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
+import { loadFeatures } from '@/helpers';
 import tokens from '@/config';
 import { LinkIds, Links } from '@/enums';
-import emailjs from '@emailjs/browser';
 import yaml from '@/templates/home.yaml';
 import { useMousePosition } from '@/hooks';
 import { Button } from '../common/Button';
-import { MediumSVG } from '../svg/social/Medium';
-import { LinkedinSVG } from '../svg/social/Linkedin';
-import { GithubSVG } from '../svg/social/Github';
 import { DownArrowSVG } from '../svg/arrows/DownArrow';
 
+const DynamicModal = dynamic(() => import('../others/Modal'), { ssr: false });
 type ErrorFieldProps = {
   fieldName: string;
 };
@@ -49,8 +43,16 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
   const { register, handleSubmit, formState, reset } = useForm({
     defaultValues,
   });
-  const { blurDataUrl, title, subtitle, image, maskSubtitle, maskTitle } =
-    props;
+  const {
+    blurDataUrl,
+    title,
+    subtitle,
+    image,
+    maskSubtitle,
+    maskTitle,
+    modalError,
+    modalSuccess,
+  } = props;
   const { errors } = formState;
   const { API_KEY, SERVICE_ID, TEMPLATE_ID } = tokens;
   const ref = useRef<HTMLFormElement>(null);
@@ -61,14 +63,20 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
   });
   const y = useTransform(scrollYProgress, [0, 1], [0, 250]);
   const [isHovered, setIsHovered] = useState(false);
-
+  const [isDisabled, setIsDisabled] = useState(false);
+  const [isSuccesful, setIsSuccessful] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const size = isHovered ? 300 : 40;
-  const formHandler = (data: any) => {
+  const formHandler = async (data: any) => {
     const formData = data as FormProps;
+    const emailjs = await import('@emailjs/browser');
     emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, API_KEY).then(
-      () => {},
-      (error) => {
-        console.log(error.text);
+      () => {
+        setIsDisabled(true);
+        setIsSuccessful(true);
+      },
+      () => {
+        setHasError(true);
       }
     );
     reset();
@@ -86,7 +94,7 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
   const { MEDIUM_LINK, GITHUB_LINK, LINKEDIN_LINK } = Links;
   return (
     <div>
-      <LazyMotion features={domAnimation}>
+      <LazyMotion features={loadFeatures}>
         <m.div
           className={contactStyles.mask}
           animate={{
@@ -146,11 +154,35 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
       <section
         className={`${contactStyles['contact-section']} ${contactStyles.wrapper}`}
       >
-        <div className="wrapper">
-          <div>
+        <div className="wrapper" style={{ position: 'relative' }}>
+          {isSuccesful && (
+            <DynamicModal closeHandler={() => setIsSuccessful(false)}>
+              <div className={contactStyles.modal}>
+                <h4 className={contactStyles['modal-title']}>
+                  {modalSuccess.title}
+                </h4>
+                <p className={contactStyles['modal-description']}>
+                  {modalSuccess.description}
+                </p>
+              </div>
+            </DynamicModal>
+          )}
+          {hasError && (
+            <DynamicModal closeHandler={() => setHasError(false)}>
+              <div className={contactStyles.modal}>
+                <h4 className={contactStyles['modal-title']}>
+                  {modalError.title}
+                </h4>
+                <p className={contactStyles['modal-description']}>
+                  {modalError.description}
+                </p>
+              </div>
+            </DynamicModal>
+          )}
+          <div style={{ position: 'relative' }}>
             <div className={contactStyles.spacer} />
             <div className={contactStyles['scroll-content']} ref={scrollRef}>
-              <LazyMotion features={domAnimation}>
+              <LazyMotion features={loadFeatures}>
                 <m.div style={{ y }} className={contactStyles.page}>
                   <div className={contactStyles['img-wrapper']}>
                     <Image
@@ -237,20 +269,40 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
                   {errors?.message && <ErrorFieldMessage fieldName="message" />}
                 </fieldset>
 
-                <Button type="submit" className={contactStyles.btn} width="md">
+                <Button
+                  type="submit"
+                  className={`${contactStyles.btn} ${isDisabled ? contactStyles['btn-disabled'] : ''}`}
+                  width="md"
+                  disabled={isDisabled}
+                >
                   Submit
                 </Button>
               </form>
             </div>
             <div className={contactStyles['grid-item-media']}>
               <Link href={MEDIUM_LINK} className={contactStyles.icon}>
-                <MediumSVG />
+                <Image
+                  alt="medium"
+                  src="/svgs/medium.svg"
+                  height={40}
+                  width={40}
+                />
               </Link>
               <Link href={LINKEDIN_LINK} className={contactStyles.icon}>
-                <LinkedinSVG />
+                <Image
+                  alt="linkedin"
+                  src="/svgs/linkedin.svg"
+                  height={40}
+                  width={40}
+                />
               </Link>
               <Link href={GITHUB_LINK} className={contactStyles.icon}>
-                <GithubSVG height={50} width={50} />
+                <Image
+                  alt="github"
+                  src="/svgs/github.svg"
+                  height={40}
+                  width={40}
+                />
               </Link>
             </div>
           </div>

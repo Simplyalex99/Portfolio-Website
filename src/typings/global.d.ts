@@ -7,7 +7,12 @@ declare module '*.yaml' {
         subheading: string;
         description: string;
         number: string;
-        icons: Array<string>;
+        images: Array<{
+          height: number;
+          width: number;
+          imageUrl: string;
+          alt?: string;
+        }>;
       }>;
     };
     mainSection: {
@@ -66,6 +71,8 @@ declare module '*.yaml' {
       blurDataUrl: string;
       maskTitle: string;
       maskSubtitle: string;
+      modalSuccess: { title: string; description: string };
+      modalError: { title: string; description: string };
     };
   };
   export default yaml;
