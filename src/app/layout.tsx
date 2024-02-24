@@ -11,7 +11,8 @@ export const metadata: Metadata = {
   title: 'Beautiful Portfolio',
   description: 'Dynamic Website Portfolio',
   icons: {
-    apple: '/images/icon.ico',
+    apple: '/images/logo.png',
+    icon: '/images/logo.png',
   },
 };
 export const RootLayout = ({
