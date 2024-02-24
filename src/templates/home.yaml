@@ -9,7 +9,7 @@ mainSection:
   blurDataUrl:
 workSection:
   images:
-    [/images/softwareforlove.webp, /images/oasis.webp, /images/openreview.webp]
+    [/images/softwareforlove.webp, /images/oasis.webp, /images/openreview.png]
   blurDataUrls: []
   content:
     - title: Softwareforlove
