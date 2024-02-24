@@ -5,11 +5,11 @@ mainSection:
   description: >
     I’ve worked on different open-source projects and have earned contributor roles, I am ready to bring my skills and provide the best quality code and take ownership for what I build. I also enjoy many other hobbies from rock climbing,
     canoeing and skateboarding.
-  image: /images/skateboard.png
+  image: /images/skateboard.webp
   blurDataUrl:
 workSection:
   images:
-    [/images/softwareforlove.png, /images/oasis.png, /images/openreview.png]
+    [/images/softwareforlove.webp, /images/oasis.webp, /images/openreview.webp]
   blurDataUrls: []
   content:
     - title: Softwareforlove
@@ -22,7 +22,7 @@ workSection:
         Software For Love is a non-profit organization that focuses on providing software solutions.
         As a developer, I collobarated with other developers in fixing bugs and implementing mock up designs into production for their website and
         mentor new developers.
-      imageUrl: /images/softwareforlove.png
+      imageUrl: /images/softwareforlove.webp
       blurDataUrl: ''
       linkUrl: https://github.com/Software-For-Love/software-for-love-site
     - title: Oasis
@@ -35,7 +35,7 @@ workSection:
         An open-source project of an online social media platform for developers to share their experience and find work easily. As a developer, I worked on both
         the frontend and backend of the project using Next.js, TailwindCSS and TypeORM. I helped implement mock up designs,
         refactor code, implement the backend authentication and fixed UI issues for different browser compatibility.
-      imageUrl: /images/oasis.png
+      imageUrl: /images/oasis.webp
       blurDataUrl: ''
       linkUrl: https://github.com/Simplyalex99/oasis
     - title: OpenReview
@@ -49,7 +49,7 @@ workSection:
       accent: experience satisfication
       text: through A.I
 skillSection:
-  image: /images/coding.jpg
+  image: /images/coding.webp
   blurDataUrl: ''
   content:
     - subheading: Machine Learning
@@ -122,31 +122,31 @@ skillSection:
 missionSection:
   images:
     [
-      /images/beautiful-design.png,
-      /images/pixel-perfect.png,
-      /images/scalable-code.png,
+      /images/beautiful-design.webp,
+      /images/pixel-perfect.webp,
+      /images/scalable-code.webp,
     ]
   blurDataUrls: []
   firstContent:
-    imageUrl: /images/beautiful-design.png
+    imageUrl: /images/beautiful-design.webp
     blurDataUrl: ''
     firstText: I build
     highlight: beautiful & optimized
     secondText: web pages for stellar responsive website experiences and fast page loading- the best of both worlds.
   secondContent:
-    imageUrl: /images/pixel-perfect.png
+    imageUrl: /images/pixel-perfect.webp
     blurDataUrl: ''
     firstText: I aim for
     highlight: pixel perfect
     secondText: design from mockup to code to ensure that the website meets the company's expectations
   thirdContent:
-    imageUrl: /images/scalable-code.png
+    imageUrl: /images/scalable-code.webp
     blurDataUrl: ''
     firstText: I write
     highlight: scalable code
     secondText: to save businesses time, money and prevent headaches for developers
 contactSection:
-  image: /images/snapback.png
+  image: /images/snapback.webp
   blurDataUrl: ''
   title: Let's start working together
   subtitle: And create magic
