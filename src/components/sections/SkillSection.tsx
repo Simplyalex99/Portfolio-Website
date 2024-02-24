@@ -4,15 +4,9 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import { Playfair_Display_SC } from 'next/font/google';
 import skillStyles from '@/styles/components/Skills.module.scss';
-import {
-  useScroll,
-  useTransform,
-  LazyMotion,
-  m,
-  domAnimation,
-} from 'framer-motion';
+import { useScroll, useTransform, LazyMotion, m } from 'framer-motion';
+import { loadFeatures } from '@/helpers';
 import yaml from '@/templates/home.yaml';
-import { iconFactory } from '../../helpers/iconFactory';
 import { useParallax } from '@/hooks';
 import { LinkIds } from '@/enums';
 
@@ -38,7 +32,7 @@ export const SkillSection = (props: typeof yaml.skillSection) => {
       <div>
         <div className={skillStyles.spacer} />
         <div className={skillStyles['scroll-content']} ref={ref}>
-          <LazyMotion features={domAnimation}>
+          <LazyMotion features={loadFeatures}>
             <m.div style={{ y }} className={skillStyles.page}>
               <div
                 style={{ height: '100%', width: '100%', position: 'relative' }}
@@ -60,14 +54,19 @@ export const SkillSection = (props: typeof yaml.skillSection) => {
         <div className={skillStyles.spacer} />
       </div>
       {content.map((data) => {
-        const types = data?.icons ?? [];
-        const svgs: Array<React.JSX.Element> = [];
-
-        types.forEach((type) => {
-          const Svg = iconFactory(type);
-          svgs.push(Svg);
+        const images = data?.images ?? [];
+        const svgs = images.map((image) => {
+          const { imageUrl, height, width, alt } = image;
+          return (
+            <Image
+              src={imageUrl}
+              alt={alt ?? 'tech'}
+              key={imageUrl}
+              height={height}
+              width={width}
+            />
+          );
         });
-
         const { description, subheading, number } = data;
         return (
           <div className={skillStyles.grid} key={number}>
