@@ -2,6 +2,7 @@
   max-width: 1000px;
   margin: 0 auto;
 }
+
 .title,
 .subtitle {
   font-size: 5rem;
@@ -15,7 +16,7 @@
 }
 .mask {
   position: absolute;
-  mask-image: url('../../../public/mask-circle.svg');
+  mask-image: url('../../../public/svgs/mask-circle.svg');
   mask-size: 40px;
   mask-repeat: no-repeat;
   height: 100%;
@@ -37,6 +38,22 @@
 
   position: relative;
 
+  .modal {
+    max-width: 400px;
+    padding: 2em;
+    .modal-description,
+    .modal-title {
+      text-align: center;
+    }
+    .modal-title {
+      font-weight: 400;
+      font-size: 1.8rem;
+    }
+    .modal-description {
+      margin-top: 1em;
+      font-size: 1.1rem;
+    }
+  }
   .spacer {
     height: 1vh;
 
@@ -48,7 +65,7 @@
     min-height: 400px;
     overflow: hidden;
     border-radius: 15px;
-
+    position: relative;
     .page {
       width: auto;
       height: auto;
@@ -95,6 +112,15 @@
         .btn {
           line-height: normal;
           margin-top: 3em;
+        }
+        .btn-disabled {
+          opacity: 0.3;
+          cursor: default;
+          &:hover {
+            background-color: black;
+            opacity: 0.3;
+            color: white;
+          }
         }
         .form-error-text {
           color: #e14e1d;
