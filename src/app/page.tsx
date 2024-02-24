@@ -2,12 +2,12 @@ import { getBase64 } from '@/serverUtils';
 import yaml from '@/templates/home.yaml';
 import {
   HeroSection,
-  SEO,
   WorkSection,
   MissionSection,
   SkillSection,
 } from '@/components';
-export const Home = async () => {
+
+const Page = async () => {
   const data = { ...yaml };
   const srcPrefix = './public';
   const getBase64Helper = async (images: Array<string>) => {
@@ -30,8 +30,6 @@ export const Home = async () => {
 
   return (
     <>
-      <SEO title="about Alex" description="beautiful portfolio  design" />
-
       <div className="wrapper">
         <HeroSection {...data.mainSection} />
         <WorkSection {...data.workSection} />
@@ -43,4 +41,4 @@ export const Home = async () => {
     </>
   );
 };
-export default Home;
+export default Page;
