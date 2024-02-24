@@ -39,3 +39,7 @@ next-env.d.ts
 sw.*
 workbox-*
 swe-worker-*
+
+# next-webpack-analyser
+
+/analyze
