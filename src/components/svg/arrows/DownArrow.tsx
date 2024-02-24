@@ -15,9 +15,9 @@ export const DownArrowSVG: React.FC<React.SVGProps<SVGSVGElement>> = (
       <path
         d="M25 39.584L25 10.4173M25 39.584L12.5 27.084M25 39.584L37.5 27.084"
         stroke="black"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

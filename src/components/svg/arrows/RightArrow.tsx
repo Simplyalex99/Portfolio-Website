@@ -12,7 +12,7 @@ export const RightArrowSVG: React.FC<React.SVGProps<SVGSVGElement>> = (
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <path d="M0 1L112.004 1" stroke="#B3B0B0" />
+      <path d="M0 1L112.004 1" stroke="#666666" />
     </svg>
   );
 };
