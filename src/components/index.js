@@ -1,17 +1,7 @@
-export { DownArrowSVG } from './svg/arrows/DownArrow';
-export { RightArrowSVG } from './svg/arrows/RightArrow';
-export { CloseSVG } from './svg/common/Close';
-export { HamburgerMenuSVG } from './svg/common/HamburgerMenu';
-export { LeftQuoteSVG } from './svg/others/LeftQuote';
-export { Modal } from './others/Modal';
-export { Button } from './common/Button';
-export { Footer } from './common/Footer';
-export { Navbar } from './common/Navbar';
 export { PrimaryLayout } from './layouts/PrimaryLayout';
 export { WithPageTransition } from './layouts/WithPageTransition';
 export { ContactSection } from './sections/ContactSection';
 export { SkillSection } from './sections/SkillSection';
 export { WorkSection } from './sections/WorkSection';
-export { Navigation } from './others/Navigation';
 export { MissionSection } from './sections/MissionSection';
 export { HeroSection } from './sections/HeroSection';
