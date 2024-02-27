@@ -27,11 +27,11 @@ export const Project = ({
   return (
     <LazyMotion features={loadFeatures}>
       <m.div style={{ scale: scaleProgress, opacity: opacityProgress }}>
-        <div key={title} className={workStyles['work-content']} ref={ref}>
-          <div className={workStyles['work-img-wrapper']}>
-            <h2 className={workStyles['work-heading']}>
+        <div key={title} className={workStyles.content} ref={ref}>
+          <div className={workStyles['img-wrapper']}>
+            <h2 className={workStyles.heading}>
               {accent}
-              <span className={workStyles['work-accent']}>{text}</span>
+              <span className={workStyles.accent}>{text}</span>
             </h2>
             <div className={workStyles['img-zoom']}>
               <Image
@@ -39,19 +39,19 @@ export const Project = ({
                 src={imageUrl}
                 height={300}
                 width={800}
-                className={workStyles['work-img']}
+                className={workStyles.img}
                 sizes="(min-width: 920px) 800px, calc(94vw - 46px)"
                 placeholder="blur"
                 blurDataURL={blurDataUrl}
               />
             </div>
           </div>
-          <div className={workStyles['work-text-content']}>
-            <p className={workStyles['work-title']}>{title}</p>
-            <p className={workStyles['work-description']}>{description}</p>
+          <div className={workStyles['text-content']}>
+            <p className={workStyles.title}>{title}</p>
+            <p className={workStyles.description}>{description}</p>
           </div>
-          <div className={workStyles['work-link-btn-wrapper']}>
-            <Link href={linkUrl} className={workStyles['work-link-btn']}>
+          <div className={workStyles['link-btn-wrapper']}>
+            <Link href={linkUrl} className={workStyles['link-btn']}>
               <Button type="button" width="md" className={workStyles.btn}>
                 See it
               </Button>

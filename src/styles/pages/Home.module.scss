@@ -1,7 +1,7 @@
 .arrow-btn {
   display: inline-block;
 }
-.btn{
+.btn {
   display: none;
 }
 .work {
@@ -18,16 +18,16 @@
   text-align: center;
   max-width: 500px;
   margin: 10em auto 0 auto;
-  .hero-content {
+  .content {
     .heading-wrapper {
-      .hero-subheading {
+      .subheading {
         font-size: 1.1rem;
         font-weight: 200;
 
         letter-spacing: 0.5em;
         margin: 0;
       }
-      .hero-heading {
+      .heading {
         font-size: 3.7rem;
         margin: 0;
         font-weight: 400;
@@ -45,7 +45,7 @@
         }
       }
     }
-    .hero-description {
+    .description {
       margin: 0;
       margin: 2em 0;
       text-align: left;
@@ -63,7 +63,7 @@
       }
     }
   }
-  .hero-img-wrapper {
+  .img-wrapper {
     margin: 0 auto;
     max-height: 650px !important;
     margin-bottom: 3.8em;
@@ -93,29 +93,28 @@
 }
 
 @media only screen and (max-width: 300px) and (min-width: 0px) {
-  .btn{
+  .btn {
     display: block;
     width: 100% !important;
-   line-height: 1;
+    line-height: 1;
     margin-bottom: 3em;
-    height:auto;
+    height: auto;
   }
-  .work{
+  .work {
     font-size: 1.8rem;
   }
   .hero {
-    .hero-content {
-      .action-btn-wrapper{
+    .content {
+      .action-btn-wrapper {
         display: none;
       }
       .heading-wrapper {
-        .hero-subheading {
+        .subheading {
           font-size: 0.9rem;
         }
-        .hero-heading {
-      font-size: 2.3rem;
-      margin-top:0.8em;
-
+        .heading {
+          font-size: 2.3rem;
+          margin-top: 0.8em;
         }
       }
     }
@@ -128,12 +127,12 @@
     margin-top: 8em;
   }
   .hero {
-    .hero-content {
+    .content {
       .heading-wrapper {
-        .hero-subheading {
+        .subheading {
           font-size: 1.3rem;
         }
-        .hero-heading {
+        .heading {
           font-size: 4.5rem;
         }
       }
@@ -145,9 +144,9 @@
     transform: none !important;
   }
   .hero {
-    .hero-content,
+    .content,
     .navigation,
-    .hero-img-wrapper {
+    .img-wrapper {
       transform: none !important;
     }
   }
@@ -159,14 +158,14 @@
     max-width: none;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    .hero-content {
+    .content {
       grid-column-start: 1;
       grid-column-end: 4;
       align-self: center;
       text-align: left;
 
       .heading-wrapper {
-        .hero-heading {
+        .heading {
           text-align: left;
           span {
             margin: 0;
@@ -174,7 +173,7 @@
         }
       }
     }
-    .hero-img-wrapper {
+    .img-wrapper {
       grid-column-start: 5;
       grid-column-end: 9;
       margin: 0;

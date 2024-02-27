@@ -9,7 +9,7 @@ export const WorkSection = (props: typeof yaml.workSection) => {
   const { content, blurDataUrls } = props;
   return (
     <section className={workStyles['work-section']}>
-      <div className={workStyles['work-content-wrapper']} id={LinkIds.WORK_ID}>
+      <div className={workStyles['content-wrapper']} id={LinkIds.WORK_ID}>
         {content.map((data, index) => {
           return (
             <Project

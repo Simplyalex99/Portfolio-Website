@@ -109,10 +109,15 @@ height: auto;
   order:2;
 }
 
-@media only screen and (max-width: 300px) and (min-width: 0px) {
-.grid{
-  padding: 0;
+@media(max-width:200px){
+
+  .grid{
+    padding: 0;
+  }
 }
+
+@media only screen and (max-width: 300px) and (min-width: 0px) {
+
 .title-wrapper{
   h2{
 font-size: 1.9rem;
@@ -136,6 +141,7 @@ height:auto !important;
   flex-direction: column;
 }
 }
+
 
 @media(min-width:500px){
 
