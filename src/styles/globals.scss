@@ -9,6 +9,7 @@
 }
 * {
   margin: 0;
+  //border: 1px solid red !important;
 }
 html,
 body {
@@ -63,12 +64,19 @@ h6 {
   text-align: center;
 }
 .wrapper {
-  margin: 8em 2em 0em 2em;
+   margin: 8em 2em 0em 2em;
 }
 .mg-top-0 {
   margin-top: 0 !important;
 }
 
+
+@media (min-width:0px) and (max-width:200px){
+  .wrapper{
+
+    margin:0;
+  }
+}
 @media (min-width: 900px) {
   .wrapper {
     margin: 2em 3em 0em 3em;

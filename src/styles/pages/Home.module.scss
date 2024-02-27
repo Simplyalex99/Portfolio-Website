@@ -1,14 +1,16 @@
 .arrow-btn {
   display: inline-block;
 }
-
+.btn{
+  display: none;
+}
 .work {
-  font-size: 5rem;
+  font-size: 3rem;
   text-align: left;
   color: white !important;
   mix-blend-mode: difference;
   margin: 0;
-  margin-top: 8em;
+  margin-top: 4em;
   word-wrap: break-word;
   font-weight: 700;
 }
@@ -17,27 +19,22 @@
   max-width: 500px;
   margin: 10em auto 0 auto;
   .hero-content {
-    .mask-content {
-      position: absolute;
-      color: white;
-      z-index: 2;
-    }
-
     .heading-wrapper {
       .hero-subheading {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         font-weight: 200;
 
         letter-spacing: 0.5em;
         margin: 0;
       }
       .hero-heading {
-        font-size: 4.5rem;
+        font-size: 3.7rem;
         margin: 0;
         font-weight: 400;
         text-transform: lowercase;
         text-align: center;
         transition: 0.3s ease;
+
         span {
           font-weight: 400;
           font-style: italic !important;
@@ -95,6 +92,54 @@
   -webkit-text-stroke-color: black;
 }
 
+@media only screen and (max-width: 300px) and (min-width: 0px) {
+  .btn{
+    display: block;
+    width: 100% !important;
+   line-height: 1;
+    margin-bottom: 3em;
+    height:auto;
+  }
+  .work{
+    font-size: 1.8rem;
+  }
+  .hero {
+    .hero-content {
+      .action-btn-wrapper{
+        display: none;
+      }
+      .heading-wrapper {
+        .hero-subheading {
+          font-size: 0.9rem;
+        }
+        .hero-heading {
+      font-size: 2.3rem;
+      margin-top:0.8em;
+
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .work {
+    font-size: 5rem;
+    margin-top: 8em;
+  }
+  .hero {
+    .hero-content {
+      .heading-wrapper {
+        .hero-subheading {
+          font-size: 1.3rem;
+        }
+        .hero-heading {
+          font-size: 4.5rem;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 1100px) {
   .work {
     transform: none !important;

@@ -8,15 +8,15 @@
   margin: 0 auto;
   max-width: 800px;
   width: auto;
-  padding: 2em 0;
+  padding: 3em 0;
 }
 .scroll-content {
   height: auto;
   width: 100%;
-  min-height: 400px;
+  min-height: 300px;
   overflow: hidden;
   border-radius: 15px;
-  background-color: #d0d0d0;
+  background-color: #ededed;
 }
 
 .img {
@@ -28,7 +28,7 @@
   height: auto;
 }
 .title {
-  font-size: 5rem;
+  font-size: 3rem;
   transition: 0.3s ease;
   cursor: text;
 
@@ -52,6 +52,7 @@
 .subheading {
   grid-column: 1/-1;
   margin-bottom: 2em;
+  font-size: 1.4rem;
 }
 .bullet-point {
   grid-column: 1/4;
@@ -78,7 +79,7 @@
   letter-spacing: 0.2em;
 }
 .content {
-  grid-column: 6/-1;
+  grid-column: 4/-1;
 }
 .description {
   margin: 0;
@@ -92,4 +93,45 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
+}
+
+.img-wrapper {
+  height: 350px;
+  width: 600px;
+  position: relative;
+}
+@media only screen and (max-width: 300px) and (min-width: 0px) {
+
+.title{
+  font-size: 1.8rem;
+}
+
+.img-wrapper{
+ width: 300px;
+}
+.bullet-point{
+  margin-bottom: 1em;
+}
+.content{
+  grid-column: 1/-1;
+}
+
+}
+@media (min-width: 600px) {
+  .img-wrapper {
+    height: 600px;
+    width: 800px;
+  }
+  .scroll-content {
+    min-height: 400px;
+  }
+
+  .content {
+    grid-column: 6/-1;
+  }
+}
+@media (min-width: 800px) {
+  .title {
+    font-size: 5rem;
+  }
 }

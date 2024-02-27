@@ -5,7 +5,7 @@
 
 .title,
 .subtitle {
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: 400;
 }
 .title {
@@ -62,7 +62,7 @@
   .scroll-content {
     height: auto;
     width: 100%;
-    min-height: 400px;
+    min-height: 200px; 
     overflow: hidden;
     border-radius: 15px;
     position: relative;
@@ -70,12 +70,12 @@
       width: auto;
       height: auto;
       .img-wrapper {
-        min-height: 700px;
+        min-height: 200px;
         position: relative;
         .img {
           object-fit: cover;
           border-radius: 15px;
-          min-height: 300px;
+          min-height: 200px;
         }
       }
     }
@@ -189,6 +189,22 @@
 }
 
 @media (min-width: 800px) {
+  .scroll-content {
+    min-height: 400px;
+    .page {
+      .img-wrapper {
+        min-height: 700px;
+        .img {
+          min-height: 300px;
+        }
+      }
+    }
+  }
+
+  .title,
+  .subtitle {
+    font-size: 5rem;
+  }
   .mask {
     display: block;
     .mask-content {
