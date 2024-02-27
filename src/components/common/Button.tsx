@@ -23,7 +23,6 @@ export const Button = ({
   const size = widths[width];
   return (
     <button
-      // eslint-disable-next-line react/button-has-type
       type={type}
       style={{ width: size }}
       className={` ${buttonStyles.btn} ${className}`}

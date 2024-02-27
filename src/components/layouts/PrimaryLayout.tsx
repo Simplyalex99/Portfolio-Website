@@ -11,11 +11,9 @@ export const PrimaryLayout: React.FC<PrimaryLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="container">
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+        <Navbar />
+        {children}
+        <Footer />
       </body>
     </html>
   );

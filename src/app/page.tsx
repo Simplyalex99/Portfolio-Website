@@ -7,7 +7,7 @@ import {
   SkillSection,
 } from '@/components';
 
-const Page = async () => {
+const fetchImages = async () => {
   const data = { ...yaml };
   const srcPrefix = './public';
   const getBase64Helper = async (images: Array<string>) => {
@@ -27,6 +27,11 @@ const Page = async () => {
   data.skillSection.blurDataUrl = await getBase64(
     `${srcPrefix}${data.skillSection.image}`
   );
+
+  return data;
+};
+const Page = async () => {
+  const data = await fetchImages();
 
   return (
     <>

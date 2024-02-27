@@ -9,6 +9,7 @@ import { useParallax } from '@/hooks';
 import homeStyles from '@/styles/pages/Home.module.scss';
 import { LinkIds } from '@/enums';
 import workStyles from '@/styles/components/Work.module.scss';
+import { Button } from '../common/Button';
 
 export const HeroSection = (props: typeof yaml.mainSection) => {
   const {
@@ -53,21 +54,19 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
   useParallax();
 
   return (
-    <>
+    <div className="container">
       <section className={homeStyles.hero}>
         <div
-          className={`scroll ${homeStyles['hero-content']}`}
+          className={`scroll ${homeStyles.content}`}
           data-rate="-.3"
           data-direction="vertical"
         >
           <div className={homeStyles['heading-wrapper']}>
-            <p
-              className={`${homeStyles['hero-subheading']} ${playfairSC.className}`}
-            >
+            <p className={`${homeStyles.subheading} ${playfairSC.className}`}>
               {subheading}
             </p>
             <h2
-              className={`${homeStyles['hero-heading']} ${playfairSC.className}`}
+              className={`${homeStyles.heading} ${playfairSC.className}`}
               id="hero-heading"
             >
               <span className={playfair.className}>{headingAccent}</span>
@@ -76,7 +75,7 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
             </h2>
           </div>
 
-          <p className={homeStyles['hero-description']}>{description}</p>
+          <p className={homeStyles.description}>{description}</p>
           <div
             className={homeStyles['action-btn-wrapper']}
             onFocus={() => undefined}
@@ -95,10 +94,13 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
               See my work
             </Link>
           </div>
+          <Button width="sm" type="button" className={homeStyles.btn}>
+            See my work
+          </Button>
         </div>
 
         <div
-          className={`${homeStyles['hero-img-wrapper']} scroll`}
+          className={`${homeStyles['img-wrapper']} scroll`}
           data-rate=".4"
           data-direction="vertical"
           onMouseOver={onMouseOverImage}
@@ -128,7 +130,7 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
           <Navigation />
         </div>
       </section>
-      <div className={workStyles['work-content-wrapper']}>
+      <div className={workStyles['content-wrapper']}>
         <h2
           className={`scroll ${homeStyles.work}`}
           data-rate="-.3"
@@ -137,7 +139,7 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
           MY WORK AND PROJECTS
         </h2>
       </div>
-    </>
+    </div>
   );
 };
 

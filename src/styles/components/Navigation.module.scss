@@ -7,6 +7,7 @@
   .nav-link {
     position: relative;
     z-index: 2;
+    overflow-wrap: break-word;
     border-top: 1px solid #b2b0b0;
     text-transform: uppercase;
     font-weight: 700;
@@ -19,6 +20,16 @@
     letter-spacing: 0.1em;
     &:hover {
       border-top: 1px solid black;
+    }
+  }
+}
+
+@media only screen and (max-width: 300px) and (min-width: 0px) {
+
+
+  .nav-link-wrapper{
+    .nav-link{
+      font-size: 0.9rem;
     }
   }
 }

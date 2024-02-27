@@ -38,84 +38,86 @@ export const Navbar = () => {
   };
   useToggleNavbarMenu(toggleProps);
   return (
-    <div
-      id="navbar"
-      className={`${navbarStyles['drop-shadow']} ${navbarStyles['navbar-bg']}`}
-    >
-      <header className={`flex  wrapper ${navbarStyles.container}`}>
-        <div className={`flex ${navbarStyles['custom-link-wrapper']}`}>
-          <div
-            id="menu-wrapper"
-            role="presentation"
-            className={`
+    <div className="container">
+      <div
+        id="navbar"
+        className={`${navbarStyles['drop-shadow']} ${navbarStyles['navbar-bg']}`}
+      >
+        <header className={`flex  wrapper ${navbarStyles.container}`}>
+          <div className={`flex ${navbarStyles['custom-link-wrapper']}`}>
+            <div
+              id="menu-wrapper"
+              role="presentation"
+              className={`
                 ${navbarStyles['menu-wrapper']}
             }`}
-          >
-            <HamburgerMenuSVG
-              className={`${navbarStyles['menu-icon']}  `}
-              width="35"
-              height="35"
-            />
-          </div>
-
-          <Link href={HOME_PATH}>
-            <button
-              type="button"
-              className={`${navbarStyles['custom-link']} ${playfair.className}`}
             >
-              MyPortfolio
-            </button>
-          </Link>
-        </div>
-        <nav
-          id="nav"
-          className={`${navbarStyles['nav-container']}
+              <HamburgerMenuSVG
+                className={`${navbarStyles['menu-icon']}  `}
+                width="35"
+                height="35"
+              />
+            </div>
+
+            <Link href={HOME_PATH}>
+              <button
+                type="button"
+                className={`${navbarStyles['custom-link']} ${playfair.className}`}
+              >
+                MyPortfolio
+              </button>
+            </Link>
+          </div>
+          <nav
+            id="nav"
+            className={`${navbarStyles['nav-container']}
 
               `}
-        >
-          <div
-            role="presentation"
-            id="close"
-            className={navbarStyles['close-icon-wrapper']}
           >
-            <CloseSVG
-              className={`${navbarStyles['close-icon']} ${navbarStyles['close-icon-light']}`}
-            />
-          </div>
-          <div className={`${navbarStyles['links-wrapper']}`}>
-            <Link href={HOME_PATH}>
-              <div
-                role="presentation"
-                onClick={() => setActiveTab(ActiveTabType.HOME)}
-                className={`${navbarStyles['nav-item-wrapper']}`}
-              >
-                <button
-                  type="button"
-                  className={`${getIsActive(ActiveTabType.HOME)} ${
-                    navbarStyles['nav-item']
-                  }  `}
+            <div
+              role="presentation"
+              id="close"
+              className={navbarStyles['close-icon-wrapper']}
+            >
+              <CloseSVG
+                className={`${navbarStyles['close-icon']} ${navbarStyles['close-icon-light']}`}
+              />
+            </div>
+            <div className={`${navbarStyles['links-wrapper']}`}>
+              <Link href={HOME_PATH}>
+                <div
+                  role="presentation"
+                  onClick={() => setActiveTab(ActiveTabType.HOME)}
+                  className={`${navbarStyles['nav-item-wrapper']}`}
                 >
-                  <span>{ActiveTabType.HOME}</span>
-                </button>
-              </div>
-            </Link>
-            <Link href={Links.CONTACT_PATH}>
-              <div
-                role="presentation"
-                className={`${navbarStyles['nav-item-wrapper']}`}
-                onClick={() => setActiveTab(ActiveTabType.CONTACT)}
-              >
-                <button
-                  type="button"
-                  className={`${navbarStyles['nav-item']} ${navbarStyles.contact}`}
+                  <button
+                    type="button"
+                    className={`${getIsActive(ActiveTabType.HOME)} ${
+                      navbarStyles['nav-item']
+                    }  `}
+                  >
+                    <span>{ActiveTabType.HOME}</span>
+                  </button>
+                </div>
+              </Link>
+              <Link href={Links.CONTACT_PATH}>
+                <div
+                  role="presentation"
+                  className={`${navbarStyles['nav-item-wrapper']}`}
+                  onClick={() => setActiveTab(ActiveTabType.CONTACT)}
                 >
-                  <span> {ActiveTabType.CONTACT}</span>
-                </button>
-              </div>
-            </Link>
-          </div>
-        </nav>
-      </header>
+                  <button
+                    type="button"
+                    className={`${navbarStyles['nav-item']} ${navbarStyles.contact}`}
+                  >
+                    <span> {ActiveTabType.CONTACT}</span>
+                  </button>
+                </div>
+              </Link>
+            </div>
+          </nav>
+        </header>
+      </div>
     </div>
   );
 };
