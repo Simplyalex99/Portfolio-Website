@@ -37,16 +37,17 @@ export const SkillSection = (props: typeof yaml.skillSection) => {
               <div
                 style={{ height: '100%', width: '100%', position: 'relative' }}
               >
-                <Image
-                  height={600}
-                  width={800}
-                  className={skillStyles.img}
-                  src={image}
-                  alt="mac computer coding screen"
-                  sizes="(min-width: 1740px) 534px, (min-width: 1100px) 29.03vw, (min-width: 600px) 500px, calc(94.29vw - 47px)"
-                  placeholder="blur"
-                  blurDataURL={blurDataUrl}
-                />
+                <div className={skillStyles['img-wrapper']}>
+                  <Image
+                    fill
+                    className={skillStyles.img}
+                    src={image}
+                    alt="mac computer coding screen"
+                    sizes="(min-width: 1740px) 534px, (min-width: 1100px) 29.03vw, (min-width: 600px) 500px, calc(94.29vw - 47px)"
+                    placeholder="blur"
+                    blurDataURL={blurDataUrl}
+                  />
+                </div>
               </div>
             </m.div>
           </LazyMotion>

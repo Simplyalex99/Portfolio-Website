@@ -52,7 +52,7 @@ export const Project = ({
           </div>
           <div className={workStyles['work-link-btn-wrapper']}>
             <Link href={linkUrl} className={workStyles['work-link-btn']}>
-              <Button type="button" width="md">
+              <Button type="button" width="md" className={workStyles.btn}>
                 See it
               </Button>
             </Link>
