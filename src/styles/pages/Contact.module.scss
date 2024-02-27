@@ -62,10 +62,12 @@
   .scroll-content {
     height: auto;
     width: 100%;
-    min-height: 200px; 
+    min-height: 200px;
     overflow: hidden;
     border-radius: 15px;
     position: relative;
+
+    background-color: #ededed;
     .page {
       width: auto;
       height: auto;
