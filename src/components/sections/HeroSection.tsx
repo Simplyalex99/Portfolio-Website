@@ -9,6 +9,7 @@ import { useParallax } from '@/hooks';
 import homeStyles from '@/styles/pages/Home.module.scss';
 import { LinkIds } from '@/enums';
 import workStyles from '@/styles/components/Work.module.scss';
+import { Button } from '../common/Button';
 
 export const HeroSection = (props: typeof yaml.mainSection) => {
   const {
@@ -53,7 +54,7 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
   useParallax();
 
   return (
-    <>
+    <div className="container">
       <section className={homeStyles.hero}>
         <div
           className={`scroll ${homeStyles['hero-content']}`}
@@ -95,6 +96,9 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
               See my work
             </Link>
           </div>
+          <Button width="sm" type="button" className={homeStyles.btn}>
+            See my work
+          </Button>
         </div>
 
         <div
@@ -137,7 +141,7 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
           MY WORK AND PROJECTS
         </h2>
       </div>
-    </>
+    </div>
   );
 };
 

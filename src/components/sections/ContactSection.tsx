@@ -93,7 +93,7 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
 
   const { MEDIUM_LINK, GITHUB_LINK, LINKEDIN_LINK } = Links;
   return (
-    <div>
+    <div className="container" style={{ position: 'relative' }}>
       <LazyMotion features={loadFeatures}>
         <m.div
           className={contactStyles.mask}
