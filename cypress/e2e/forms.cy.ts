@@ -4,6 +4,7 @@ import Modal from '../support/classObjects/Modal';
 describe('contact form tests', () => {
   const contactForm = new ContactForm();
   const modal = new Modal();
+
   it('displays form validation and submits when valid', () => {
     cy.visit('/contact');
     // --------------------------------------------------------------------------
