@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link, { LinkProps } from 'next/link';
 import { playfair } from '@/fonts';
-import { Links } from '@/enums';
+import { Links, NavLinksTestIds } from '@/enums';
 import navbarStyles from '@/styles/components/Navbar.module.scss';
 import { HamburgerMenuSVG } from '../svg/common/HamburgerMenu';
 import { CloseSVG } from '../svg/common/Close';
@@ -37,6 +37,7 @@ export const Navbar = () => {
     className: navbarStyles['open-nav'],
   };
   useToggleNavbarMenu(toggleProps);
+
   return (
     <div className="container">
       <div
@@ -59,7 +60,7 @@ export const Navbar = () => {
               />
             </div>
 
-            <Link href={HOME_PATH}>
+            <Link href={HOME_PATH} data-testid={NavLinksTestIds.LOGO}>
               <button
                 type="button"
                 className={`${navbarStyles['custom-link']} ${playfair.className}`}
@@ -84,7 +85,7 @@ export const Navbar = () => {
               />
             </div>
             <div className={`${navbarStyles['links-wrapper']}`}>
-              <Link href={HOME_PATH}>
+              <Link href={HOME_PATH} data-testid={NavLinksTestIds.HOME}>
                 <div
                   role="presentation"
                   onClick={() => setActiveTab(ActiveTabType.HOME)}
@@ -100,7 +101,10 @@ export const Navbar = () => {
                   </button>
                 </div>
               </Link>
-              <Link href={Links.CONTACT_PATH}>
+              <Link
+                href={Links.CONTACT_PATH}
+                data-testid={NavLinksTestIds.CONTACT}
+              >
                 <div
                   role="presentation"
                   className={`${navbarStyles['nav-item-wrapper']}`}

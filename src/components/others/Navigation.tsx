@@ -1,19 +1,36 @@
 import Link from 'next/link';
-import { LinkIds } from '@/enums';
+import { LinkIds, HeroLinksTestIds } from '@/enums';
 import navStyles from '@/styles/components/Navigation.module.scss';
 
-const Links: Array<{ text: string; url: string }> = [
-  { text: 'Contributions & Projects', url: LinkIds.WORK_ID },
-  { text: 'Why hire me?', url: LinkIds.MISSION_ID },
-  { text: 'My Skills', url: LinkIds.SKILLS_ID },
+const Links: Array<{ text: string; url: string; testId?: string }> = [
+  {
+    text: 'Contributions & Projects',
+    url: LinkIds.WORK_ID,
+    testId: HeroLinksTestIds.PROJECTS,
+  },
+  {
+    text: 'Why hire me?',
+    url: LinkIds.MISSION_ID,
+    testId: HeroLinksTestIds.MISSION,
+  },
+  {
+    text: 'My Skills',
+    url: LinkIds.SKILLS_ID,
+    testId: HeroLinksTestIds.SKILLS,
+  },
 ];
 export const Navigation = () => {
   return (
     <div className={navStyles['nav-link-wrapper']}>
       {Links.map((items) => {
-        const { text, url } = items;
+        const { text, url, testId } = items;
         return (
-          <Link key={url} href={`#${url}`} className={navStyles['nav-link']}>
+          <Link
+            key={url}
+            href={`#${url}`}
+            className={navStyles['nav-link']}
+            data-testid={testId}
+          >
             {text}
           </Link>
         );

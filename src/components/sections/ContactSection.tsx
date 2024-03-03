@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { loadFeatures } from '@/helpers';
 import tokens from '@/config';
-import { LinkIds, Links } from '@/enums';
+import { LinkIds, Links, ContactPageTestIds, ModalTestIds } from '@/enums';
 import yaml from '@/templates/home.yaml';
 import { useMousePosition } from '@/hooks';
 import { Button } from '../common/Button';
@@ -24,9 +24,12 @@ const labelIds = {
   email: 'label-email',
   message: 'label-message',
 };
-const ErrorFieldMessage = ({ fieldName }: ErrorFieldProps) => {
+const ErrorFieldMessage = ({
+  fieldName,
+  ...props
+}: ErrorFieldProps & React.HTMLProps<HTMLParagraphElement>) => {
   return (
-    <p className={contactStyles['form-error-text']}>
+    <p className={contactStyles['form-error-text']} {...props}>
       Please specify {fieldName}
     </p>
   );
@@ -157,7 +160,10 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
         <div className="wrapper" style={{ position: 'relative' }}>
           {isSuccesful && (
             <DynamicModal closeHandler={() => setIsSuccessful(false)}>
-              <div className={contactStyles.modal}>
+              <div
+                className={contactStyles.modal}
+                data-testid={ModalTestIds.MODAL_SUCCESS}
+              >
                 <h4 className={contactStyles['modal-title']}>
                   {modalSuccess.title}
                 </h4>
@@ -169,7 +175,10 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
           )}
           {hasError && (
             <DynamicModal closeHandler={() => setHasError(false)}>
-              <div className={contactStyles.modal}>
+              <div
+                className={contactStyles.modal}
+                data-testid={ModalTestIds.MODAL_ERROR}
+              >
                 <h4 className={contactStyles['modal-title']}>
                   {modalError.title}
                 </h4>
@@ -220,6 +229,7 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
                   </label>
                   <input
                     id="name"
+                    data-testid={ContactPageTestIds.NAME_FIELD}
                     onFocus={() => onFocusHandler(labelIds.name)}
                     {...register('name', { required: true })}
                     className={`${contactStyles.field} ${
@@ -227,7 +237,12 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
                     }`}
                     onBlur={() => onFocusOutHandler(labelIds.name)}
                   />
-                  {errors?.name && <ErrorFieldMessage fieldName="name" />}
+                  {errors?.name && (
+                    <ErrorFieldMessage
+                      fieldName="name"
+                      data-testid={ContactPageTestIds.NAME_ERROR}
+                    />
+                  )}
                 </fieldset>
                 <div className={contactStyles.group}>
                   <label
@@ -239,6 +254,7 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
                   </label>
                   <input
                     id="email"
+                    data-testid={ContactPageTestIds.EMAIL_FIELD}
                     onFocus={() => onFocusHandler(labelIds.email)}
                     {...register('email', { required: true })}
                     className={`${contactStyles.field} ${
@@ -246,7 +262,12 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
                     }`}
                     onBlur={() => onFocusOutHandler(labelIds.email)}
                   />
-                  {errors?.email && <ErrorFieldMessage fieldName="email" />}
+                  {errors?.email && (
+                    <ErrorFieldMessage
+                      fieldName="email"
+                      data-testid={ContactPageTestIds.EMAIL_ERROR}
+                    />
+                  )}
                 </div>
                 <fieldset className={contactStyles.group}>
                   <label
@@ -258,6 +279,7 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
                   </label>
                   <textarea
                     id="message"
+                    data-testid={ContactPageTestIds.MESSAGE_FIELD}
                     onFocus={() => onFocusHandler(labelIds.message)}
                     {...register('message', { required: true })}
                     cols={50}
@@ -266,7 +288,12 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
                     } ${errors?.message ? contactStyles['field-error'] : ''}`}
                     onBlur={() => onFocusOutHandler(labelIds.message)}
                   />
-                  {errors?.message && <ErrorFieldMessage fieldName="message" />}
+                  {errors?.message && (
+                    <ErrorFieldMessage
+                      fieldName="message"
+                      data-testid={ContactPageTestIds.MESSAGE_ERROR}
+                    />
+                  )}
                 </fieldset>
 
                 <Button
@@ -274,6 +301,7 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
                   className={`${contactStyles.btn} ${isDisabled ? contactStyles['btn-disabled'] : ''}`}
                   width="md"
                   disabled={isDisabled}
+                  data-testid={ContactPageTestIds.SUBMIT_BUTTON}
                 >
                   Submit
                 </Button>

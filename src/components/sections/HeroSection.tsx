@@ -7,7 +7,7 @@ import { Navigation } from '../others/Navigation';
 import yaml from '@/templates/home.yaml';
 import { useParallax } from '@/hooks';
 import homeStyles from '@/styles/pages/Home.module.scss';
-import { LinkIds } from '@/enums';
+import { LinkIds, HeroLinksTestIds } from '@/enums';
 import workStyles from '@/styles/components/Work.module.scss';
 import { Button } from '../common/Button';
 
@@ -89,6 +89,7 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
             />
             <Link
               href={`#${LinkIds.WORK_ID}`}
+              data-testid={HeroLinksTestIds.WORK}
               className={homeStyles['action-btn']}
             >
               See my work
