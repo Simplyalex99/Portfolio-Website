@@ -46,7 +46,7 @@ workSection:
       imageUrl: /images/open-review.webp
       blurDataUrl:
       linkUrl: https://github.com/Simplyalex99/OpenReview
-      accent: experience satisfication
+      accent: experience satisfaction
       text: through A.I
 skillSection:
   image: /images/mac.webp
