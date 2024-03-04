@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { playfairSC } from '@/fonts';
 import missionStyles from '@/styles/components/Mission.module.scss';
 import Image from 'next/image';
-import { LinkIds, Links } from '@/enums';
+import { LinkIds, Links, ActionLinks } from '@/enums';
 import yaml from '@/templates/home.yaml';
 import { Button } from '../common/Button';
 
@@ -22,7 +22,7 @@ export const MissionSection = (props: typeof yaml.missionSection) => {
             Taking code to the next level with
           </p>
           <h2 className={playfairSC.className}>MY MISSION AND VALUES</h2>
-          <Link href={Links.CONTACT_PATH}>
+          <Link href={Links.CONTACT_PATH} data-testid={ActionLinks.MISSION}>
             <Button type="button" className={missionStyles['get-in-touch-btn']}>
               Get in touch
             </Button>

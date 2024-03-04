@@ -1,5 +1,4 @@
 export { PrimaryLayout } from './layouts/PrimaryLayout';
-export { WithPageTransition } from './layouts/WithPageTransition';
 export { ContactSection } from './sections/ContactSection';
 export { SkillSection } from './sections/SkillSection';
 export { WorkSection } from './sections/WorkSection';
