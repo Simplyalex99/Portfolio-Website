@@ -26,6 +26,7 @@
           margin-bottom: 2em;
           .testimonial {
             color: #666666;
+            line-height: 1.6;
           }
         }
         .author {
@@ -73,14 +74,16 @@
         .title,
         .description {
           margin: 0;
-
-          line-height: 1.4;
+        }
+        .description{
+          line-height: 1.6;
         }
         .title {
           font-weight: bold;
           font-size: 1.5rem;
           margin-top: 1.5em;
           margin-bottom: 1.5em;
+          line-height: 1.4;
         }
       }
     }
@@ -113,12 +116,9 @@
       margin: 0 auto;
       .content {
         margin-bottom: 5em;
-        display: grid;
-        grid-template-columns: repeat(8, 1fr);
 
         .img-wrapper {
-          grid-column-start: 1;
-          grid-column-end: -1;
+          width: 100%;
           margin-bottom: 3em;
           .heading {
             display: block;
@@ -130,7 +130,7 @@
             transform: translateY(190px);
             max-width: 200px;
             overflow-wrap: normal;
-
+            padding-left: 32px;
             font-weight: 700;
             line-height: normal;
             font-size: 3rem;
@@ -141,26 +141,31 @@
             }
           }
         }
-        .testimonial-wrapper {
-          grid-column-start: 5;
-          grid-column-end: -1;
-          order: 4;
-          margin-top: 2em;
-        }
+        .grid {
+          display: grid;
+          grid-template-columns: repeat(8, 1fr);
+          padding: 0 32px;
+          .testimonial-wrapper {
+            grid-column-start: 5;
+            grid-column-end: -1;
+            order: 4;
+            margin-top: 2em;
+          }
 
-        .link-btn-wrapper {
-          grid-column-start: 1;
-          grid-column-end: 3;
-          order: 2;
-          align-self: self-end;
-          margin: 0;
-        }
-        .text-content {
-          grid-column-start: 5;
-          grid-column-end: -1;
-          order: 3;
-          .description {
-            margin-bottom: 0;
+          .link-btn-wrapper {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            order: 2;
+            align-self: self-end;
+            margin: 0;
+          }
+          .text-content {
+            grid-column-start: 5;
+            grid-column-end: -1;
+            order: 3;
+            .description {
+              margin-bottom: 0;
+            }
           }
         }
       }

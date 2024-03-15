@@ -46,36 +46,38 @@ export const Project = ({
               />
             </div>
           </div>
-          <div className={workStyles['text-content']}>
-            <p className={workStyles.title}>{title}</p>
-            <p className={workStyles.description}>{description}</p>
-          </div>
-          <div className={workStyles['link-btn-wrapper']}>
-            <Link href={linkUrl} className={workStyles['link-btn']}>
-              <Button type="button" width="md" className={workStyles.btn}>
-                See it
-              </Button>
-            </Link>
-          </div>
-          <div className={workStyles['testimonial-wrapper']}>
-            {data?.testimonial && (
-              <div className={workStyles.flex}>
-                <span className={workStyles['left-quote']}>
-                  {data.testimonial && <LeftQuoteSVG />}
-                </span>
-                <span className={workStyles.testimonial}>
-                  {data.testimonial}
-                </span>
-              </div>
-            )}
-            {data?.author && (
-              <p className={workStyles.author}>
-                - {data.author}{' '}
-                <span className={workStyles['job-type']}>
-                  , {data?.jobType}
-                </span>
-              </p>
-            )}
+          <div className={workStyles.grid}>
+            <div className={workStyles['text-content']}>
+              <p className={workStyles.title}>{title}</p>
+              <p className={workStyles.description}>{description}</p>
+            </div>
+            <div className={workStyles['link-btn-wrapper']}>
+              <Link href={linkUrl} className={workStyles['link-btn']}>
+                <Button type="button" width="md" className={workStyles.btn}>
+                  See it
+                </Button>
+              </Link>
+            </div>
+            <div className={workStyles['testimonial-wrapper']}>
+              {data?.testimonial && (
+                <div className={workStyles.flex}>
+                  <span className={workStyles['left-quote']}>
+                    {data.testimonial && <LeftQuoteSVG />}
+                  </span>
+                  <span className={workStyles.testimonial}>
+                    {data.testimonial}
+                  </span>
+                </div>
+              )}
+              {data?.author && (
+                <p className={workStyles.author}>
+                  - {data.author}{' '}
+                  <span className={workStyles['job-type']}>
+                    , {data?.jobType}
+                  </span>
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </m.div>
