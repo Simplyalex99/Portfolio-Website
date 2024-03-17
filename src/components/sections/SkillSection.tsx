@@ -43,7 +43,7 @@ export const SkillSection = (props: typeof yaml.skillSection) => {
       scrollTrigger: {
         trigger: descriptionTarget,
         start: 'top 100%',
-        end: 'top 30%',
+        end: 'top 47%',
         scrub: true,
         markers: false,
       },
