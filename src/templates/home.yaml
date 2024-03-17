@@ -9,7 +9,11 @@ mainSection:
   blurDataUrl:
 workSection:
   images:
-    [/images/software-for-love.webp, /images/oasis.webp, /images/open-review.webp]
+    [
+      /images/software-for-love.webp,
+      /images/oasis.webp,
+      /images/open-review.webp,
+    ]
   blurDataUrls: []
   content:
     - title: Softwareforlove
@@ -49,7 +53,7 @@ workSection:
       accent: experience satisfaction
       text: through A.I
 skillSection:
-  image: /images/mac.webp
+  image: /images/macbook-air.webp
   blurDataUrl: ''
   content:
     - subheading: Machine Learning
