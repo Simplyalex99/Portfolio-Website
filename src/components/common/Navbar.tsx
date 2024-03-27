@@ -10,15 +10,6 @@ import { HamburgerMenuSVG } from '../svg/common/HamburgerMenu';
 import { CloseSVG } from '../svg/common/Close';
 import { useToggleNavbarMenu } from '../../hooks/index';
 
-export type NavItemProps = {
-  href: string;
-  children: React.ReactNode;
-};
-export const NavItem = (props: NavItemProps & LinkProps) => {
-  const { children } = props;
-  return <Link {...props}>{children}</Link>;
-};
-
 export enum ActiveTabType {
   HOME = 'HOME',
   CONTACT = 'CONTACT',
