@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link, { LinkProps } from 'next/link';
 import { playfair } from '@/fonts';
 import { Links, NavLinksTestIds } from '@/enums';
 import navbarStyles from '@/styles/components/Navbar.module.scss';
+import { usePathname } from 'next/navigation';
 import { HamburgerMenuSVG } from '../svg/common/HamburgerMenu';
 import { CloseSVG } from '../svg/common/Close';
 import { useToggleNavbarMenu } from '../../hooks/index';
@@ -22,9 +23,18 @@ export enum ActiveTabType {
   HOME = 'HOME',
   CONTACT = 'CONTACT',
 }
+export const activeTabFactory = (pathname: string): ActiveTabType => {
+  switch (pathname) {
+    case Links.CONTACT_PATH:
+      return ActiveTabType.CONTACT;
+    default:
+      return ActiveTabType.HOME;
+  }
+};
 
 export const Navbar = () => {
-  const [activeTab, setActiveTab] = useState(ActiveTabType.HOME);
+  const pathname = usePathname();
+  const [activeTab, setActiveTab] = useState<ActiveTabType>(ActiveTabType.HOME);
   const getIsActive = (type: ActiveTabType) => {
     return activeTab === type ? navbarStyles['active-tab'] : '';
   };
@@ -37,7 +47,10 @@ export const Navbar = () => {
     className: navbarStyles['open-nav'],
   };
   useToggleNavbarMenu(toggleProps);
-
+  useEffect(() => {
+    const currentTab = activeTabFactory(pathname);
+    setActiveTab(currentTab);
+  }, [pathname]);
   return (
     <div className="container">
       <div
@@ -48,6 +61,7 @@ export const Navbar = () => {
           <div className={`flex ${navbarStyles['custom-link-wrapper']}`}>
             <div
               id="menu-wrapper"
+              data-testid={NavLinksTestIds.MENU}
               role="presentation"
               className={`
                 ${navbarStyles['menu-wrapper']}
@@ -78,6 +92,7 @@ export const Navbar = () => {
             <div
               role="presentation"
               id="close"
+              data-testid={NavLinksTestIds.CLOSE}
               className={navbarStyles['close-icon-wrapper']}
             >
               <CloseSVG
