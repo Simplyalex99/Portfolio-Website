@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Link, { LinkProps } from 'next/link';
+import Link from 'next/link';
 import { playfair } from '@/fonts';
 import { Links, NavLinksTestIds } from '@/enums';
 import navbarStyles from '@/styles/components/Navbar.module.scss';
