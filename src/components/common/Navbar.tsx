@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Link, { LinkProps } from 'next/link';
+import Link from 'next/link';
 import { playfair } from '@/fonts';
 import { Links, NavLinksTestIds } from '@/enums';
 import navbarStyles from '@/styles/components/Navbar.module.scss';
@@ -9,15 +9,6 @@ import { usePathname } from 'next/navigation';
 import { HamburgerMenuSVG } from '../svg/common/HamburgerMenu';
 import { CloseSVG } from '../svg/common/Close';
 import { useToggleNavbarMenu } from '../../hooks/index';
-
-export type NavItemProps = {
-  href: string;
-  children: React.ReactNode;
-};
-export const NavItem = (props: NavItemProps & LinkProps) => {
-  const { children } = props;
-  return <Link {...props}>{children}</Link>;
-};
 
 export enum ActiveTabType {
   HOME = 'HOME',
@@ -61,7 +52,6 @@ export const Navbar = () => {
           <div className={`flex ${navbarStyles['custom-link-wrapper']}`}>
             <div
               id="menu-wrapper"
-              data-testid={NavLinksTestIds.MENU}
               role="presentation"
               className={`
                 ${navbarStyles['menu-wrapper']}
@@ -92,7 +82,6 @@ export const Navbar = () => {
             <div
               role="presentation"
               id="close"
-              data-testid={NavLinksTestIds.CLOSE}
               className={navbarStyles['close-icon-wrapper']}
             >
               <CloseSVG
