@@ -52,7 +52,6 @@ export const Navbar = () => {
           <div className={`flex ${navbarStyles['custom-link-wrapper']}`}>
             <div
               id="menu-wrapper"
-              data-testid={NavLinksTestIds.MENU}
               role="presentation"
               className={`
                 ${navbarStyles['menu-wrapper']}
@@ -83,7 +82,6 @@ export const Navbar = () => {
             <div
               role="presentation"
               id="close"
-              data-testid={NavLinksTestIds.CLOSE}
               className={navbarStyles['close-icon-wrapper']}
             >
               <CloseSVG
