@@ -19,6 +19,10 @@
     .content {
       margin: 0 auto;
       margin-bottom: 5em;
+      .heading-wrapper {
+        display: none;
+      }
+
       .testimonial-wrapper {
         .flex {
           display: flex;
@@ -52,10 +56,6 @@
         }
         .img-zoom:hover .work-img {
           transform: scale(1.1);
-        }
-
-        .heading {
-          display: none;
         }
 
         .img {
@@ -120,51 +120,47 @@
         .img-wrapper {
           width: 100%;
           margin-bottom: 3em;
-          .heading {
-            display: block;
-            margin: 0;
-            position: absolute;
-            z-index: 3;
-            font-size: 3rem;
-            color: white;
-            transform: translateY(190px);
-            max-width: 200px;
-            overflow-wrap: normal;
-            padding-left: 32px;
-            font-weight: 700;
-            line-height: normal;
-            font-size: 3rem;
-            .accent {
-              color: black;
-
-              display: block;
-            }
-          }
         }
         .grid {
           display: grid;
           grid-template-columns: repeat(8, 1fr);
-          padding: 0 32px;
+
+          .heading-wrapper {
+            display: block;
+            grid-column: 1/2;
+            grid-row: 1;
+            .heading {
+              font-size: 3.1rem;
+              line-height: 1.1;
+            }
+          }
+
           .testimonial-wrapper {
             grid-column-start: 5;
             grid-column-end: -1;
-            order: 4;
+
             margin-top: 2em;
           }
 
           .link-btn-wrapper {
             grid-column-start: 1;
             grid-column-end: 3;
-            order: 2;
+
             align-self: self-end;
+
             margin: 0;
           }
           .text-content {
             grid-column-start: 5;
             grid-column-end: -1;
-            order: 3;
+            grid-row: 1;
+
             .description {
               margin-bottom: 0;
+            }
+            .title {
+              margin: 0;
+              margin-bottom: 1.1em;
             }
           }
         }

@@ -1,1 +1,1 @@
-export { inter, playfair, playfairSC } from './fonts';
+export { inter, playfair, playfairSC, bebasNeue } from './fonts';
