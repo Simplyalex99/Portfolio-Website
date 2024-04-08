@@ -17,8 +17,7 @@ workSection:
   blurDataUrls: []
   content:
     - title: Softwareforlove
-      accent: spreading love
-      text: through software
+      texts: [speading, love, through, software]
       testimonial: Alex had a huge impact to the team, I highly recommend him.
       author: Avaneesh Madaram
       jobType: Project Manager
@@ -30,8 +29,7 @@ workSection:
       blurDataUrl: ''
       linkUrl: https://github.com/Software-For-Love/software-for-love-site
     - title: Oasis
-      accent: share experiences
-      text: with others
+      texts: [share, experiences, with, others]
       testimonial: He did a great job contributing to the team, if I could hire him, I would.
       author: Henry Lecompte
       jobType: Lead Software Developer
@@ -50,8 +48,7 @@ workSection:
       imageUrl: /images/open-review.webp
       blurDataUrl:
       linkUrl: https://github.com/Simplyalex99/OpenReview
-      accent: experience satisfaction
-      text: through A.I
+      texts: [experience, satisfaction, through, A.I]
 skillSection:
   image: /images/macbook-air.webp
   blurDataUrl: ''

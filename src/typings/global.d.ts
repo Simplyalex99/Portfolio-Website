@@ -31,8 +31,7 @@ declare module '*.yaml' {
         jobType?: string;
         author?: string;
         title: string;
-        accent: string;
-        text: string;
+        texts: Array<string>;
         description: string;
         imageUrl: string;
         blurDataUrl: string;
