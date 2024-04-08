@@ -6,6 +6,7 @@ import { LazyMotion, m, useTransform } from 'framer-motion';
 import { loadFeatures } from '@/helpers/loadFeatures';
 import workStyles from '@/styles/components/Work.module.scss';
 import yaml from '@/templates/home.yaml';
+import { bebasNeue } from '@/fonts';
 import { useScroll } from 'framer-motion';
 import { LeftQuoteSVG } from '../svg/others/LeftQuote';
 import { Button } from '../common/Button';
@@ -23,16 +24,12 @@ export const Project = ({
   });
   const scaleProgress = useTransform(scrollYProgress, [0, 0.7], [0.8, 1]);
   const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
-  const { imageUrl, linkUrl, description, text, title, accent } = data;
+  const { imageUrl, linkUrl, description, texts, title } = data;
   return (
     <LazyMotion features={loadFeatures}>
       <m.div style={{ scale: scaleProgress, opacity: opacityProgress }}>
         <div key={title} className={workStyles.content} ref={ref}>
           <div className={workStyles['img-wrapper']}>
-            <h2 className={workStyles.heading}>
-              {accent}
-              <span className={workStyles.accent}>{text}</span>
-            </h2>
             <div className={workStyles['img-zoom']}>
               <Image
                 alt="project image"
@@ -47,6 +44,18 @@ export const Project = ({
             </div>
           </div>
           <div className={workStyles.grid}>
+            <div className={workStyles['heading-wrapper']}>
+              {texts.map((text) => {
+                return (
+                  <h2
+                    className={`${bebasNeue.className} ${workStyles.heading}`}
+                    key={text}
+                  >
+                    {text}
+                  </h2>
+                );
+              })}
+            </div>
             <div className={workStyles['text-content']}>
               <p className={workStyles.title}>{title}</p>
               <p className={workStyles.description}>{description}</p>
