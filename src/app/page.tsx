@@ -2,7 +2,8 @@ import { getBase64 } from '@/serverUtils';
 import yaml from '@/templates/home.yaml';
 import {
   HeroSection,
-  WorkSection,
+  ProjectSection,
+  WithSmoothScroll,
   MissionSection,
   SkillSection,
 } from '@/components';
@@ -18,9 +19,10 @@ const fetchImages = async () => {
   (data.mainSection.blurDataUrl = await getBase64(
     `${srcPrefix}${data.mainSection.image}`
   )),
-    (data.workSection.blurDataUrls = (await getBase64Helper(
-      data.workSection.images
+    (data.projectSection.blurMobileDataUrls = (await getBase64Helper(
+      data.projectSection.mobileImages
     )) as unknown as string[]);
+
   data.missionSection.blurDataUrls = (await getBase64Helper(
     data.missionSection.images
   )) as unknown as string[];
@@ -35,14 +37,16 @@ const Page = async () => {
 
   return (
     <>
-      <div className="wrapper">
-        <HeroSection {...data.mainSection} />
-        <WorkSection {...data.workSection} />
-      </div>
-      <MissionSection {...data.missionSection} />
-      <div className="wrapper">
-        <SkillSection {...data.skillSection} />
-      </div>
+      <WithSmoothScroll>
+        <div className="wrapper">
+          <HeroSection {...data.mainSection} />
+        </div>
+        <ProjectSection {...data.projectSection} />
+        <MissionSection {...data.missionSection} />
+        <div className="wrapper">
+          <SkillSection {...data.skillSection} />
+        </div>
+      </WithSmoothScroll>
     </>
   );
 };

@@ -15,6 +15,18 @@ declare module '*.yaml' {
         }>;
       }>;
     };
+    projectSection: {
+      mobileImages: Array<string>;
+      blurMobileDataUrls: Array<string>;
+      heading: string;
+      content: Array<{
+        title: string;
+        imageUrl: string;
+        linkUrl: string;
+        backgroundColor: string;
+        variant: 'left' | 'right';
+      }>;
+    };
     mainSection: {
       subheading: string;
       heading: string;
@@ -22,21 +34,6 @@ declare module '*.yaml' {
       description: string;
       image: string;
       blurDataUrl: string;
-    };
-    workSection: {
-      images: Array<string>;
-      blurDataUrls: Array<string>;
-      content: Array<{
-        testimonial?: string;
-        jobType?: string;
-        author?: string;
-        title: string;
-        texts: Array<string>;
-        description: string;
-        imageUrl: string;
-        blurDataUrl: string;
-        linkUrl: string;
-      }>;
     };
     missionSection: {
       images: Array<string>;
