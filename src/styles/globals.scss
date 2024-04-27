@@ -9,7 +9,6 @@
 }
 * {
   margin: 0;
-
 }
 html,
 body {
@@ -38,7 +37,6 @@ select {
 }
 
 html {
-  scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
@@ -46,8 +44,9 @@ body::-webkit-scrollbar {
 }
 
 a {
-  color: white;
+  color: black;
   text-decoration: none;
+  cursor: pointer;
 }
 
 p,
