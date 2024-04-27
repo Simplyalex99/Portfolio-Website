@@ -2,13 +2,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { playfair, playfairSC } from '@/fonts';
+import { useEffect } from 'react';
 import { RightArrowSVG } from '../svg/arrows/RightArrow';
 import { Navigation } from '../others/Navigation';
 import yaml from '@/templates/home.yaml';
 import { useParallax } from '@/hooks';
 import homeStyles from '@/styles/pages/Home.module.scss';
 import { LinkIds, HeroLinksTestIds } from '@/enums';
-import workStyles from '@/styles/components/Work.module.scss';
 import { Button } from '../common/Button';
 
 export const HeroSection = (props: typeof yaml.mainSection) => {
@@ -34,20 +34,6 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
     const element = document.getElementById('arrow-btn');
     if (element) {
       element.style.width = '100px';
-    }
-  };
-  const onMouseOverImage = () => {
-    const element = document.getElementById('hero-heading');
-    const className = homeStyles['stroke-effect'];
-    if (element) {
-      element.classList.add(className);
-    }
-  };
-  const onMouseLeaveImage = () => {
-    const element = document.getElementById('hero-heading');
-    const className = homeStyles['stroke-effect'];
-    if (element) {
-      element.classList.remove(className);
     }
   };
 
@@ -102,26 +88,18 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
 
         <div
           className={`${homeStyles['img-wrapper']} scroll`}
-          data-rate=".4"
+          data-rate=".1"
           data-direction="vertical"
-          onMouseOver={onMouseOverImage}
-          onMouseLeave={onMouseLeaveImage}
-          onFocus={() => undefined}
         >
-          <div className={homeStyles['img-zoom']}>
-            <Image
-              src={image}
-              alt="my hobby"
-              id={imageId}
-              width={400}
-              height={650}
-              sizes="(min-width: 1740px) 534px, (min-width: 1100px) 29.03vw, (min-width: 600px) 500px, calc(94.29vw - 47px)"
-              className={homeStyles.img}
-              placeholder="blur"
-              priority
-              blurDataURL={blurDataUrl}
-            />
-          </div>
+          <Image
+            src={image}
+            alt="my hobby"
+            id={imageId}
+            width={400}
+            height={650}
+            sizes="(min-width: 1740px) 534px, (min-width: 1100px) 29.03vw, (min-width: 600px) 500px, calc(94.29vw - 47px)"
+            className={homeStyles.img}
+          />
         </div>
         <div
           className={`scroll ${homeStyles.navigation}`}
@@ -131,15 +109,6 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
           <Navigation />
         </div>
       </section>
-      <div className={workStyles['content-wrapper']}>
-        <h2
-          className={`scroll ${homeStyles.work}`}
-          data-rate="-.3"
-          data-direction="vertical"
-        >
-          MY WORK AND PROJECTS
-        </h2>
-      </div>
     </div>
   );
 };
