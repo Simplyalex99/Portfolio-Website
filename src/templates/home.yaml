@@ -7,48 +7,39 @@ mainSection:
     canoeing and skateboarding.
   image: /images/skateboard.webp
   blurDataUrl:
-workSection:
-  images:
+projectSection:
+  heading: Crafting innovative solutions tailored to meet the unique needs of my clients. My projects reflect a commitment to functionality, user experience, and cutting-edge technology.
+  mobileImages:
     [
-      /images/software-for-love.webp,
-      /images/oasis.webp,
-      /images/open-review.webp,
+      '/images/sfl-v3.png',
+      '/images/openreview-v3.png',
+      '/images/oasis-v3.png',
+      '/images/plumb-v2.png',
     ]
-  blurDataUrls: []
+  blurMobileDataUrls: []
+
   content:
     - title: Softwareforlove
-      texts: [speading, love, through, software]
-      testimonial: Alex had a huge impact to the team, I highly recommend him.
-      author: Avaneesh Madaram
-      jobType: Project Manager
-      description: >
-        Software For Love is a non-profit organization that focuses on providing software solutions.
-        As a developer, I collobarated with other developers in fixing bugs and implementing mock up designs into production for their website and
-        mentor new developers.
-      imageUrl: /images/software-for-love.webp
-      blurDataUrl: ''
+      imageUrl: /images/s4l.png
       linkUrl: https://github.com/Software-For-Love/software-for-love-site
-    - title: Oasis
-      texts: [share, experiences, with, others]
-      testimonial: He did a great job contributing to the team, if I could hire him, I would.
-      author: Henry Lecompte
-      jobType: Lead Software Developer
-      description: >
-        An open-source project of an online social media platform for developers to share their experience and find work easily. As a developer, I worked on both
-        the frontend and backend of the project using Next.js, TailwindCSS and TypeORM. I helped implement mock up designs,
-        refactor code, implement the backend authentication and fixed UI issues for different browser compatibility.
-      imageUrl: /images/oasis.webp
-      blurDataUrl: ''
-      linkUrl: https://github.com/Simplyalex99/oasis
+      backgroundColor: '#3c4a71'
+
+      variant: 'left'
     - title: OpenReview
-      description: >
-        A dashboard app designed to help businesses save time and make decisions with the help of machine learning
-        and natural language processing. The app identifies local competitors, predicts the sucess of the businesses
-        and provides sentimental analysis of customer reviews and more.
       imageUrl: /images/open-review.webp
-      blurDataUrl:
       linkUrl: https://github.com/Simplyalex99/OpenReview
-      texts: [experience, satisfaction, through, A.I]
+      backgroundColor: '#838282'
+      variant: 'right'
+    - title: Oasis
+      imageUrl: /images/oasis1.png
+      linkUrl: https://github.com/Simplyalex99/oasis
+      backgroundColor: '#181d27'
+      variant: 'left'
+    - title: JTech Mechanical
+      imageUrl: /images/plumb.png
+      linkUrl: https://www.figma.com/file/COllyXE855Zfrk3cdLBF2c/JTech?type=design&node-id=81%3A517&mode=design&t=zlHwmRMkGQbFheGd-1
+      backgroundColor: '#d3ccc9'
+      variant: 'right'
 skillSection:
   image: /images/macbook-air.webp
   blurDataUrl: ''
