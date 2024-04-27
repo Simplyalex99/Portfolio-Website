@@ -56,7 +56,10 @@
     margin: 0 auto;
     max-height: 650px !important;
     margin-bottom: 3.8em;
-
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
     .img {
       object-fit: cover;
     }
