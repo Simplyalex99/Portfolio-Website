@@ -3,8 +3,11 @@
 }
 .heading {
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-bottom: 2em;
+}
+.heading-wrapper {
+  border-bottom: 1px solid #c9c9c9;
 }
 .section {
   margin-top: 8em;
@@ -14,6 +17,7 @@
 }
 .subheading {
   text-transform: uppercase;
+  text-align: left;
   color: #8c8c8c;
   font-size: 0.8rem;
   font-weight: 400;
@@ -90,7 +94,7 @@
   margin: 0 auto;
   max-width: 600px;
 }
-@media (min-width: 700px) {
+@media (min-width: 600px) {
   .content-wrapper {
     max-width: 1000px;
   }
@@ -108,7 +112,8 @@
     position: relative;
   }
 }
-@media (min-width: 1300px) {
+
+@media (min-width: 800px) {
   .card-accents {
     display: block;
   }
@@ -136,6 +141,7 @@
   }
   .content {
     grid-column: 2/8;
+
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
@@ -144,14 +150,49 @@
     font-weight: 500;
     font-size: 1.8rem;
     margin-bottom: 2em;
-    grid-column: 1/8;
+    grid-column: 1/9;
   }
   .heading-wrapper {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
+    margin-bottom: 2em;
   }
   .subheading {
+    text-align: center;
+  }
+  .project-wrapper {
+    border-top: none;
+    padding: 1em 0;
+    margin-top: 1em;
+    transition: all 0.2s linear;
+    position: relative;
+    text-align: center;
+
+    .project {
+      font-size: 2.75rem;
+
+      text-align: center;
+      font-weight: 500;
+
+      position: relative;
+
+      display: inline-block;
+      z-index: 9999;
+      transition: all 0.2s linear;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .heading-wrapper {
+    border-bottom: none;
+  }
+  .subheading {
+    text-align: left;
     text-transform: uppercase;
+
     color: #8c8c8c;
     font-size: 1rem;
     font-weight: 500;
