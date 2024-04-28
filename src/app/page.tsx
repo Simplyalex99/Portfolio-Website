@@ -22,6 +22,9 @@ const fetchImages = async () => {
     (data.projectSection.blurMobileDataUrls = (await getBase64Helper(
       data.projectSection.mobileImages
     )) as unknown as string[]);
+  data.projectSection.blurCardDataUrls = (await getBase64Helper(
+    data.projectSection.cardImages
+  )) as unknown as string[];
 
   data.missionSection.blurDataUrls = (await getBase64Helper(
     data.missionSection.images

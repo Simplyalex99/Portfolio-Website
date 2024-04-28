@@ -25,6 +25,8 @@ export const CardAccentDrop = ({
   offset = 20,
   translateY = 60,
 }: Props) => {
+  const { blurCardDataUrls } = data;
+
   return (
     <div className={styles.container}>
       {data.content.map((content, index) => {
@@ -71,6 +73,8 @@ export const CardAccentDrop = ({
                     width={337}
                     height={240}
                     className={styles.img}
+                    placeholder="blur"
+                    blurDataURL={blurCardDataUrls[index]}
                   />
                 </motion.div>
               </div>

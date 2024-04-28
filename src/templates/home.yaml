@@ -11,32 +11,39 @@ projectSection:
   heading: Crafting innovative solutions tailored to meet the unique needs of my clients. My projects reflect a commitment to functionality, user experience, and cutting-edge technology.
   mobileImages:
     [
-      '/images/sfl-v3.png',
-      '/images/openreview-v3.png',
-      '/images/oasis-v3.png',
-      '/images/plumb-v2.png',
+      '/images/sfl-large.webp',
+      '/images/openreview-large.webp',
+      '/images/oasis-large.webp',
+      '/images/plumbing-large.webp',
+    ]
+  cardImages:
+    [
+      '/images/sfl-small.webp',
+      '/images/openreview-small.webp',
+      '/images/oasis-small.webp',
+      '/images/plumbing-small.webp',
     ]
   blurMobileDataUrls: []
-
+  blurCardDataUrls: []
   content:
     - title: Softwareforlove
-      imageUrl: /images/s4l.png
+      imageUrl: /images/sfl-small.webp
       linkUrl: https://github.com/Software-For-Love/software-for-love-site
       backgroundColor: '#3c4a71'
 
       variant: 'left'
     - title: OpenReview
-      imageUrl: /images/open-review.webp
+      imageUrl: /images/openreview-small.webp
       linkUrl: https://github.com/Simplyalex99/OpenReview
       backgroundColor: '#838282'
       variant: 'right'
     - title: Oasis
-      imageUrl: /images/oasis1.png
+      imageUrl: /images/oasis-small.webp
       linkUrl: https://github.com/Simplyalex99/oasis
       backgroundColor: '#181d27'
       variant: 'left'
     - title: JTech Mechanical
-      imageUrl: /images/plumb.png
+      imageUrl: /images/plumbing-small.webp
       linkUrl: https://www.figma.com/file/COllyXE855Zfrk3cdLBF2c/JTech?type=design&node-id=81%3A517&mode=design&t=zlHwmRMkGQbFheGd-1
       backgroundColor: '#d3ccc9'
       variant: 'right'

@@ -30,7 +30,7 @@ export const ProjectSection = (props: typeof yaml.projectSection) => {
             <p className={styles.subheading}>Featured Projects</p>
             <div className={styles['card-accents']}>
               <CardAccentDrop
-                data={yaml.projectSection}
+                data={props}
                 activeIndex={activeIndex}
                 translateY={90}
                 offset={15}
@@ -66,9 +66,9 @@ export const ProjectSection = (props: typeof yaml.projectSection) => {
                         fill={true}
                         alt=""
                         className={styles.img}
-                        sizes="400px"
                         placeholder="blur"
                         blurDataURL={blurMobileDataUrls[index]}
+                        sizes="(min-width: 1180px) 484px, (min-width: 700px) calc(39.57vw + 25px), calc(95.79vw - 51px)"
                       />
                     </div>
                     <p className={`${styles['project-sm']}`}>

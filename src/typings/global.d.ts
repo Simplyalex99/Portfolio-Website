@@ -18,6 +18,8 @@ declare module '*.yaml' {
     projectSection: {
       mobileImages: Array<string>;
       blurMobileDataUrls: Array<string>;
+      cardImages: Array<string>;
+      blurCardDataUrls: Array<string>;
       heading: string;
       content: Array<{
         title: string;
