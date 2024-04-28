@@ -32,8 +32,10 @@ export const ProjectSection = (props: typeof yaml.projectSection) => {
               <CardAccentDrop
                 data={props}
                 activeIndex={activeIndex}
-                translateY={90}
-                offset={15}
+                options={{
+                  translateYLarge: 80,
+                  offsetLarge: 15,
+                }}
               />
             </div>
 
