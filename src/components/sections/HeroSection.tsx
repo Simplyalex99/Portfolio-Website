@@ -86,11 +86,7 @@ export const HeroSection = (props: typeof yaml.mainSection) => {
           </Button>
         </div>
 
-        <div
-          className={`${homeStyles['img-wrapper']} scroll`}
-          data-rate=".1"
-          data-direction="vertical"
-        >
+        <div className={`${homeStyles['img-wrapper']} `}>
           <Image
             src={image}
             alt="my hobby"
