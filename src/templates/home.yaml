@@ -47,6 +47,27 @@ projectSection:
       linkUrl: https://www.figma.com/file/COllyXE855Zfrk3cdLBF2c/JTech?type=design&node-id=81%3A517&mode=design&t=zlHwmRMkGQbFheGd-1
       backgroundColor: '#d3ccc9'
       variant: 'right'
+missionSection:
+  heading: Mission
+  images:
+    [
+      '/images/graphic-design.webp',
+      '/images/labtop-desk.webp',
+      '/images/camera-photography.webp',
+    ]
+  blurCardDataUrls: []
+  content1:
+    description: I build beautiful web design experience to build trust
+    imageUrl: /images/graphic-design.webp
+    alt: Graphic design
+  content2:
+    description: I write scalable code to save businesses time, money and developer headaches
+    imageUrl: /images/labtop-desk.webp
+    alt: Labtop desk
+  content3:
+    description: I aim for pixel perfect design from mockup to code
+    imageUrl: /images/camera-photography.webp
+    alt: Camera photography
 skillSection:
   image: /images/macbook-air.webp
   blurDataUrl: ''
@@ -118,32 +139,6 @@ skillSection:
       number: '03'
       description: I am familiar with design principles such as whitespace, color and contrast and typography.
 
-missionSection:
-  images:
-    [
-      /images/beautiful-optimize.webp,
-      /images/camera.webp,
-      /images/labtop-notebook.webp,
-    ]
-  blurDataUrls: []
-  firstContent:
-    imageUrl: /images/beautiful-optimize.webp
-    blurDataUrl: ''
-    firstText: I build
-    highlight: beautiful & optimized
-    secondText: web pages for stellar responsive website experiences and fast page loading- the best of both worlds.
-  secondContent:
-    imageUrl: /images/camera.webp
-    blurDataUrl: ''
-    firstText: I aim for
-    highlight: pixel perfect
-    secondText: design from mockup to code to ensure that the website meets the company's expectations
-  thirdContent:
-    imageUrl: /images/labtop-notebook.webp
-    blurDataUrl: ''
-    firstText: I write
-    highlight: scalable code
-    secondText: to save businesses time, money and prevent headaches for developers
 contactSection:
   image: /images/snapback-photo.webp
   blurDataUrl: ''

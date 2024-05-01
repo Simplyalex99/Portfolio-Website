@@ -38,28 +38,23 @@ declare module '*.yaml' {
       blurDataUrl: string;
     };
     missionSection: {
+      heading: string;
       images: Array<string>;
       blurDataUrls: Array<string>;
-      firstContent: {
+      content1: {
+        description: string;
         imageUrl: string;
-        firstText: string;
-        secondText: string;
-        highlight: string;
-        blurDataUrl: string;
+        alt: string;
       };
-      secondContent: {
+      content2: {
+        description: string;
         imageUrl: string;
-        firstText: string;
-        secondText: string;
-        highlight: string;
-        blurDataUrl: string;
+        alt: string;
       };
-      thirdContent: {
+      content3: {
+        description: string;
         imageUrl: string;
-        firstText: string;
-        secondText: string;
-        highlight: string;
-        blurDataUrl: string;
+        alt: string;
       };
     };
     contactSection: {
