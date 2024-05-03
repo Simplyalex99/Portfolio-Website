@@ -57,6 +57,15 @@ declare module '*.yaml' {
         alt: string;
       };
     };
+    testimonialSection: {
+      content: Array<{
+        description: string;
+        linkUrl: string;
+        company: string;
+        author: string;
+        role: string;
+      }>;
+    };
     contactSection: {
       title: string;
       subtitle: string;

@@ -68,6 +68,21 @@ missionSection:
     description: I aim for pixel perfect design from mockup to code
     imageUrl: /images/camera-photography.webp
     alt: Camera photography
+testimonialSection:
+  content:
+    - description: Alex had a huge impact on the team, we really felt the loss to our team when he left. I highly recommend him.
+      linkUrl: https://github.com/Software-For-Love/software-for-love-site
+      company: Softwareforlove
+      author: Avaneesh Madaram
+      role: Project Manager
+    - description: >
+                  Alex did a great job contributing to the team, and is willingly to learn any skills to do the job as he did on our project.
+                  If I could hire him, I would.
+      linkUrl: https://github.com/Simplyalex99/oasis
+      company: Oasis
+      author: Henry Lecompte
+      role: Lead Software Developer
+
 skillSection:
   image: /images/macbook-air.webp
   blurDataUrl: ''

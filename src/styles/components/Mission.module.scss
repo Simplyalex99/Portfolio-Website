@@ -105,6 +105,12 @@
 }
 
 @media (min-width: 1200px) {
+  .section{
+    height:5000px;
+  }
+  .heading{
+    margin-bottom: 1em;
+  }
   .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -119,5 +125,8 @@
   }
   .card2 {
     top: 300vh;
+  }
+  .heading{
+    font-size:16rem;
   }
 }

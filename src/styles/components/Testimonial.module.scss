@@ -1,0 +1,60 @@
+.section {
+  position: relative;
+  background-color: #f0eeec;
+  //padding: 500px 0;
+  height: auto;
+}
+.wrapper {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  position: relative;
+}
+.container {
+  position: relative;
+
+  width: 100%;
+}
+.spacer{
+      height: 100vh;
+}
+
+.testimonial {
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-bottom: 1em;
+}
+
+.author {
+  font-size: 1.1rem;
+  margin-bottom: 1em;
+}
+.from {
+  color: #4f4f4f;
+}
+.company {
+  text-decoration: underline;
+}
+@media (min-width: 600px) {
+  .heading,
+  .testimonial-wrapper {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 900px) {
+  .container {
+    max-width: 900px;
+  }
+  .testimonial-wrapper,
+  .heading {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
