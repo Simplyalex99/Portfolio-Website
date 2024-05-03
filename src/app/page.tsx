@@ -6,6 +6,7 @@ import {
   WithSmoothScroll,
   MissionSection,
   SkillSection,
+  TestimonialSection,
 } from '@/components';
 
 const fetchImages = async () => {
@@ -45,6 +46,7 @@ const Page = async () => {
         </div>
         <ProjectSection {...data.projectSection} />
         <MissionSection {...data.missionSection} />
+        <TestimonialSection />
         <div className="wrapper">
           <SkillSection {...data.skillSection} />
         </div>
