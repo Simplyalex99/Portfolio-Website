@@ -6,9 +6,14 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import SplitType, { TargetElement } from 'split-type';
 import yaml from '@/templates/home.yaml';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export const TestimonialSection = () => {
   const refs = useRef<Array<HTMLParagraphElement | null>>([]);
+  if (typeof window !== 'undefined') {
+    gsap.registerPlugin(useGSAP);
+    gsap.registerPlugin(ScrollTrigger);
+  }
   useGSAP(() => {
     refs.current = refs.current.slice(0, refs.current.length);
 
@@ -20,7 +25,7 @@ export const TestimonialSection = () => {
         scrollTrigger: {
           trigger: ref,
           start: 'top 100%',
-          end: 'top 47%',
+          end: 'top 55%',
           scrub: true,
           markers: false,
         },
