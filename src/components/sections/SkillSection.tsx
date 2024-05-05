@@ -5,6 +5,7 @@ import yaml from '@/templates/home.yaml';
 import Image from 'next/image';
 import { useTransform, useScroll, LazyMotion, m } from 'framer-motion';
 import { loadFeatures } from '@/helpers';
+import { LinkIds } from '@/enums';
 import { LineSVG } from '../svg/others/Line';
 export const SkillSection = () => {
   const { subheading, description, imageUrl, alt, blurDataUrl } =
@@ -16,7 +17,7 @@ export const SkillSection = () => {
   });
   const y = useTransform(scrollYProgress, [0, 1], [0, 500]);
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id={LinkIds.SKILLS_ID}>
       <div className={`wrapper ${styles.wrapper}`}>
         <div className={styles.container}>
           <div className={styles.box1}>
