@@ -5,8 +5,8 @@ import {
   ProjectSection,
   WithSmoothScroll,
   MissionSection,
-  SkillSection,
   TestimonialSection,
+  SkillSection,
 } from '@/components';
 
 const fetchImages = async () => {
@@ -29,9 +29,6 @@ const fetchImages = async () => {
   data.missionSection.blurDataUrls = (await getBase64Helper(
     data.missionSection.images
   )) as unknown as string[];
-  data.skillSection.blurDataUrl = await getBase64(
-    `${srcPrefix}${data.skillSection.image}`
-  );
 
   return data;
 };
@@ -47,9 +44,7 @@ const Page = async () => {
         <ProjectSection {...data.projectSection} />
         <MissionSection {...data.missionSection} />
         <TestimonialSection />
-        <div className="wrapper">
-          <SkillSection {...data.skillSection} />
-        </div>
+        <SkillSection />
       </WithSmoothScroll>
     </>
   );

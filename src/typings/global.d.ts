@@ -1,20 +1,5 @@
 declare module '*.yaml' {
   const yaml: {
-    skillSection: {
-      image: string;
-      blurDataUrl: string;
-      content: Array<{
-        subheading: string;
-        description: string;
-        number: string;
-        images: Array<{
-          height: number;
-          width: number;
-          imageUrl: string;
-          alt?: string;
-        }>;
-      }>;
-    };
     projectSection: {
       mobileImages: Array<string>;
       blurMobileDataUrls: Array<string>;
@@ -65,6 +50,13 @@ declare module '*.yaml' {
         author: string;
         role: string;
       }>;
+    };
+    skillSection: {
+      imageUrl: string;
+      blurDataUrl: string;
+      subheading: string;
+      description: string;
+      alt: string;
     };
     contactSection: {
       title: string;
