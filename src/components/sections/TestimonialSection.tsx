@@ -25,7 +25,7 @@ export const TestimonialSection = () => {
         scrollTrigger: {
           trigger: ref,
           start: 'top 100%',
-          end: 'top 55%',
+          end: 'top 35%',
           scrub: true,
           markers: false,
         },
