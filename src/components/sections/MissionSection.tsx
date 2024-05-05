@@ -5,6 +5,7 @@ import yaml from '@/templates/home.yaml';
 import Image from 'next/image';
 import { useScroll, useTransform, LazyMotion, m } from 'framer-motion';
 import { loadFeatures } from '@/helpers';
+import { LinkIds } from '@/enums';
 export const MissionSection = (props: typeof yaml.missionSection) => {
   const { heading, content1, content2, content3, blurDataUrls } = props;
   const container = useRef(null);
@@ -20,7 +21,11 @@ export const MissionSection = (props: typeof yaml.missionSection) => {
 
   return (
     <>
-      <section className={`wrapper ${styles.section}`} ref={container}>
+      <section
+        className={`wrapper ${styles.section}`}
+        ref={container}
+        id={LinkIds.MISSION_ID}
+      >
         <div className={styles.container}>
           <h2 className={styles.heading}>{heading}</h2>
           <LazyMotion features={loadFeatures}>
