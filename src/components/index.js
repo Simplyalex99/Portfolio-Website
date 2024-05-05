@@ -6,3 +6,4 @@ export { ProjectSection } from './sections/ProjectSection';
 export { WithSmoothScroll } from './layouts/WithSmoothScroll';
 export { TestimonialSection } from './sections/TestimonialSection';
 export { SkillSection } from './sections/SkillSection';
+export { ContactCTASection } from './sections/ContactCTASection';
