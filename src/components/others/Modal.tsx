@@ -13,7 +13,7 @@ export const Modal = ({
     <div
       style={{
         position: 'absolute',
-        height: '100%',
+        height: '100vh',
         width: '100%',
         display: 'grid',
         justifyContent: 'center',
