@@ -2,7 +2,9 @@
   max-width: 1000px;
   margin: 0 auto;
 }
-
+.loading {
+  margin-bottom: 1em;
+}
 .title,
 .subtitle {
   font-size: 3rem;
@@ -23,6 +25,7 @@
   width: 100%;
   background-color: black;
   display: none;
+  z-index: 100;
   .mask-content {
     .title,
     .subtitle {
@@ -37,10 +40,12 @@
   width: auto;
   margin-top: 10em;
   position: relative;
+  z-index: 100;
 
   .modal {
     max-width: 400px;
     padding: 2em;
+    position: relative;
     .modal-description,
     .modal-title {
       text-align: center;
@@ -113,7 +118,7 @@
 
         .btn {
           line-height: normal;
-          margin-top: 3em;
+          margin-top: 1em;
         }
         .btn-disabled {
           opacity: 0.3;

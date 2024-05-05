@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { loadFeatures } from '@/helpers';
 import tokens from '@/config';
-import { LinkIds, Links, ContactPageTestIds, ModalTestIds } from '@/enums';
+import { Links, ContactPageTestIds, ModalTestIds } from '@/enums';
 import yaml from '@/templates/home.yaml';
 import { useMousePosition } from '@/hooks';
 import { Button } from '../common/Button';
@@ -40,24 +40,15 @@ type FormProps = {
   name: string;
 };
 
-export const ContactSection = (props: typeof yaml.contactSection) => {
+export const ContactSection = () => {
   const defaultValues = { name: '', email: '', message: '' };
 
   const { register, handleSubmit, formState, reset } = useForm({
     defaultValues,
   });
-  const {
-    blurDataUrl,
-    title,
-    subtitle,
-    image,
-    maskSubtitle,
-    maskTitle,
-    modalError,
-    modalSuccess,
-  } = props;
+  const { title, subtitle, maskSubtitle, maskTitle, modalError, modalSuccess } =
+    yaml.contactSection;
   const { errors } = formState;
-  const { API_KEY, SERVICE_ID, TEMPLATE_ID } = tokens;
   const ref = useRef<HTMLFormElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -68,21 +59,28 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
   const [isSuccesful, setIsSuccessful] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
   const size = isHovered ? 300 : 40;
+
+  const { API_KEY, SERVICE_ID, TEMPLATE_ID } = tokens;
   const formHandler = async (data: any) => {
+    setIsLoading(true);
     const formData = data as FormProps;
     const emailjs = await import('@emailjs/browser');
     emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, API_KEY).then(
       () => {
+        setIsLoading(false);
         setIsDisabled(true);
         setIsSuccessful(true);
+        reset();
       },
       () => {
+        setIsLoading(false);
         setHasError(true);
+        reset();
       }
     );
-    reset();
   };
   const onFocusHandler = (id: string) => {
     const element = document.getElementById(id);
@@ -146,9 +144,7 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
         <div className="wrapper">
           <h2 className={contactStyles.title}>{title}</h2>
           <div className={contactStyles.bounce}>
-            <Link href={`#${LinkIds.CONTACT_ID}`}>
-              <DownArrowSVG />
-            </Link>
+            <DownArrowSVG />
           </div>
           <h2 className={contactStyles.subtitle}>{subtitle}</h2>
         </div>
@@ -188,29 +184,7 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
               </div>
             </DynamicModal>
           )}
-          <div style={{ position: 'relative' }}>
-            <div className={contactStyles.spacer} />
-            <div className={contactStyles['scroll-content']} ref={scrollRef}>
-              <LazyMotion features={loadFeatures}>
-                <m.div style={{ y }} className={contactStyles.page}>
-                  <div className={contactStyles['img-wrapper']}>
-                    <Image
-                      width={900}
-                      height={700}
-                      className={contactStyles.img}
-                      src={image}
-                      sizes="(min-width: 1020px) 904px, calc(95.43vw - 50px)"
-                      alt="mac computer coding screen"
-                      placeholder="blur"
-                      blurDataURL={blurDataUrl}
-                    />
-                  </div>
-                </m.div>
-              </LazyMotion>
-            </div>
-            <div className={contactStyles.spacer} />
-          </div>
-          <div className={contactStyles.grid} id={LinkIds.CONTACT_ID}>
+          <div className={contactStyles.grid}>
             <div className={contactStyles['grid-item-form']}>
               <form
                 ref={ref}
@@ -295,7 +269,9 @@ export const ContactSection = (props: typeof yaml.contactSection) => {
                     />
                   )}
                 </fieldset>
-
+                {isLoading && (
+                  <p className={contactStyles.loading}>Loading...</p>
+                )}
                 <Button
                   type="submit"
                   className={`${contactStyles.btn} ${isDisabled ? contactStyles['btn-disabled'] : ''}`}
