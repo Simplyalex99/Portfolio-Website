@@ -2,7 +2,6 @@ declare module '*.yaml' {
   const yaml: {
     heroSection: {
       imageUrl: string;
-      blurDataUrl: string;
     };
     projectSection: {
       images: Array<string>;
@@ -15,14 +14,6 @@ declare module '*.yaml' {
         description: string;
         alt: string;
       }>;
-    };
-    mainSection: {
-      subheading: string;
-      heading: string;
-      headingAccent: string;
-      description: string;
-      image: string;
-      blurDataUrl: string;
     };
     missionSection: {
       heading: string;
