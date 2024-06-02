@@ -24,7 +24,7 @@ const itemMain = {
 };
 export const Loader = ({
   setLoading,
-  milliseconds = 4000,
+  milliseconds = 2000,
 }: {
   milliseconds?: number;
   setLoading: (isLoading: boolean) => void;
@@ -46,10 +46,10 @@ export const Loader = ({
       >
         <motion.div variants={itemMain} className={styles['transition-image']}>
           <motion.img
-            src="/images/skateboard.png"
+            src="/images/skateboard-gray.webp"
             layoutId="main-image-1"
             className={styles.img}
-          />
+          ></motion.img>
         </motion.div>
       </motion.div>
     </motion.div>

@@ -1,111 +1,90 @@
 'use client';
-import Link from 'next/link';
+import { motion, LayoutGroup, AnimatePresence } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import styles from '@/styles/components/Hero.module.scss';
 import Image from 'next/image';
-import { playfair, playfairSC } from '@/fonts';
-import { useEffect } from 'react';
-import { RightArrowSVG } from '../svg/arrows/RightArrow';
-import { Navigation } from '../others/Navigation';
+import Link from 'next/link';
 import yaml from '@/templates/home.yaml';
-import { useParallax } from '@/hooks';
-import homeStyles from '@/styles/pages/Home.module.scss';
-import { LinkIds, HeroLinksTestIds } from '@/enums';
-import { Button } from '../common/Button';
+import { Loader } from '../framer/SmoothLoading';
+import { TextFloatUp } from '../framer/TextFloatUp';
+import Button from '../common/Button';
+import { Links } from '@/enums';
+export const HeroSection = () => {
+  const { imageUrl } = yaml.heroSection;
+  const [loading, setLoading] = useState(true);
 
-export const HeroSection = (props: typeof yaml.mainSection) => {
-  const {
-    image,
-    subheading,
-    heading,
-    headingAccent,
-    description,
-    blurDataUrl,
-  } = props;
-
-  const imageId = 'carousel';
-
-  const onMouseOverButton = () => {
-    const element = document.getElementById('arrow-btn');
-    if (element) {
-      element.style.width = '120px';
-      element.style.transition = '0.5s ease';
+  useEffect(() => {
+    if (loading) {
+      document.getElementById('section-a')?.classList.add(styles.loading);
+      document.getElementById('spacer')?.classList.add(styles.spacer);
+    } else {
+      document.getElementById('section-a')?.classList.remove(styles.loading);
+      document.getElementById('spacer')?.classList.remove(styles.spacer);
     }
-  };
-  const onMouseLeaveButton = () => {
-    const element = document.getElementById('arrow-btn');
-    if (element) {
-      element.style.width = '100px';
-    }
-  };
-
-  useParallax();
-
+  }, [loading]);
   return (
-    <div className="container">
-      <section className={homeStyles.hero}>
-        <div
-          className={`scroll ${homeStyles.content}`}
-          data-rate="-.3"
-          data-direction="vertical"
-        >
-          <div className={homeStyles['heading-wrapper']}>
-            <p className={`${homeStyles.subheading} ${playfairSC.className}`}>
-              {subheading}
-            </p>
-            <h2
-              className={`${homeStyles.heading} ${playfairSC.className}`}
-              id="hero-heading"
-            >
-              <span className={playfair.className}>{headingAccent}</span>
-              <br />
-              {heading}
-            </h2>
-          </div>
+    <section className={`wrapper ${styles.section}`} id="section-a">
+      <LayoutGroup>
+        <AnimatePresence>
+          {loading ? (
+            <motion.div key="loader">
+              <Loader setLoading={setLoading} />{' '}
+            </motion.div>
+          ) : (
+            <>
+              <div className={styles.container}>
+                <p className={` ${styles.subheading1}`}>
+                  <TextFloatUp>crafting</TextFloatUp>
+                </p>
+                <h1 className={`${styles.heading}`}>
+                  {' '}
+                  <TextFloatUp>aesthic</TextFloatUp>
+                </h1>
+                <p className={`${styles.subheading2}`}>
+                  <TextFloatUp>designs</TextFloatUp>
+                </p>
+                <TextFloatUp className={styles['btn-container']}>
+                  <Link href={Links.CONTACT_PATH}>
+                    <Button type="button" width="md" className={styles.btn}>
+                      Contact me
+                    </Button>
+                  </Link>
+                </TextFloatUp>
+              </div>
+              <div className={styles.content}>
+                <motion.div
+                  className={`${styles['img-wrapper']} ${styles['transition-image']} `}
+                  transition={{ ease: [0.6, 0.01, 0.05, 0.9], duration: 1.6 }}
+                  layoutId="main-image-1"
+                >
+                  <Image
+                    src={imageUrl}
+                    alt="my hobby"
+                    fill
+                    priority
+                    className={styles['img-small']}
+                    sizes="(min-width: 1740px) 534px, (min-width: 1100px) 29.03vw, (min-width: 600px) 500px, calc(94.29vw - 47px)"
+                  />
+                </motion.div>
 
-          <p className={homeStyles.description}>{description}</p>
-          <div
-            className={homeStyles['action-btn-wrapper']}
-            onFocus={() => undefined}
-            onMouseOver={onMouseOverButton}
-            onMouseLeave={onMouseLeaveButton}
-          >
-            <RightArrowSVG
-              width={100}
-              id="arrow-btn"
-              className={homeStyles['arrow-btn']}
-            />
-            <Link
-              href={`#${LinkIds.WORK_ID}`}
-              data-testid={HeroLinksTestIds.WORK}
-              className={homeStyles['action-btn']}
-            >
-              See my work
-            </Link>
-          </div>
-          <Button width="sm" type="button" className={homeStyles.btn}>
-            See my work
-          </Button>
-        </div>
-
-        <div className={`${homeStyles['img-wrapper']} `}>
-          <Image
-            src={image}
-            alt="my hobby"
-            id={imageId}
-            width={400}
-            height={650}
-            sizes="(min-width: 1740px) 534px, (min-width: 1100px) 29.03vw, (min-width: 600px) 500px, calc(94.29vw - 47px)"
-            className={homeStyles.img}
-          />
-        </div>
-        <div
-          className={`scroll ${homeStyles.navigation}`}
-          data-rate="-.3"
-          data-direction="vertical"
-        >
-          <Navigation />
-        </div>
-      </section>
-    </div>
+                <div className={styles.subcontent}>
+                  <div className={styles.careers}>
+                    <p className={styles.addons}>SEO, UI/UX, AI</p>
+                    <p className={styles.job}>FRONTEND DEVELOPER</p>
+                  </div>
+                  <div className={styles.graduation}>
+                    <p className={styles['degree-short-form']}>BCS 2022-2023</p>
+                    <p className={styles.year}>2022-2023</p>
+                    <p className={styles.degree}>Bachelor&apos;s C.S degree</p>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+        </AnimatePresence>
+      </LayoutGroup>
+      <div className={styles.spacer} id="spacer"></div>
+    </section>
   );
 };
 
