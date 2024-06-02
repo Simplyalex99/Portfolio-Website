@@ -1,89 +1,51 @@
-'use client';
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { useState } from 'react';
-import styles from '@/styles/components/Project.module.scss';
 import yaml from '@/templates/home.yaml';
-import { LinkIds } from '@/enums/index';
-import { CardAccentDrop } from '../effects/CardAccentDrop';
-import { playfair } from '@/fonts';
-export const ProjectSection = (props: typeof yaml.projectSection) => {
-  const [activeIndex, setActiveIndex] = useState(-1);
-
-  const updateIndex = (index: number) => {
-    setActiveIndex(index);
-  };
-  const resetIndex = () => {
-    setActiveIndex(-1);
-  };
-
-  const { content, mobileImages, heading, blurMobileDataUrls } = props;
+import Link from 'next/link';
+import Image from 'next/image';
+import styles from '@/styles/components/Project.module.scss';
+import HorizontalScroll from '../framer/HorizontalScroll';
+export const ProjectSection = () => {
+  const { content, heading, blurDataUrls } = yaml.projectSection;
 
   return (
-    <div className={styles.section} id={LinkIds.WORK_ID}>
-      <div className="wrapper">
-        <div className={` ${styles['content-wrapper']} `}>
+    <>
+      <section className={`wrapper ${styles.section}`}>
+        <div className={styles.container}>
           <div className={styles.content}>
-            <div className={styles['heading-wrapper']}>
-              <h2 className={styles.heading}>{heading}</h2>
-            </div>
-            <p className={styles.subheading}>Featured Projects</p>
-            <div className={styles['card-accents']}>
-              <CardAccentDrop
-                data={props}
-                activeIndex={activeIndex}
-                options={{
-                  translateYLarge: 80,
-                  offsetLarge: 15,
-                }}
-              />
-            </div>
-
-            <div className={styles['container-lg']}>
-              {content.map((data, index) => {
-                const { title, linkUrl } = data;
-                return (
-                  <div className={`${styles['project-wrapper']}`} key={title}>
-                    <p
-                      className={`${styles.project} ${playfair.className} `}
-                      onMouseEnter={() => updateIndex(index)}
-                      onMouseLeave={() => resetIndex()}
-                    >
-                      <Link href={linkUrl}>{title}</Link>
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-            <div className={styles.gallery}>
-              {content.map((data, index) => {
-                const { title, linkUrl } = data;
-                return (
-                  <div className={styles.flex} key={index}>
-                    <div
-                      className={`${styles['img-wrapper']} ${styles['img-zoom']}`}
-                    >
-                      <Image
-                        src={mobileImages[index]}
-                        fill={true}
-                        alt=""
-                        className={styles.img}
-                        placeholder="blur"
-                        blurDataURL={blurMobileDataUrls[index]}
-                        sizes="(min-width: 1180px) 484px, (min-width: 700px) calc(39.57vw + 25px), calc(95.79vw - 51px)"
-                      />
-                    </div>
-                    <p className={`${styles['project-sm']}`}>
-                      <Link href={linkUrl}>{title}</Link>
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
+            <h2 className={styles.heading}>{heading}</h2>
           </div>
+
+          <HorizontalScroll>
+            {content.map((data, i) => {
+              const { imageUrl, linkUrl, title, description, alt } = data;
+
+              return (
+                <div key={imageUrl} className={styles.card}>
+                  <div className={styles['img-wrapper']}>
+                    <Image
+                      src={imageUrl}
+                      fill
+                      alt={alt}
+                      className={styles.img}
+                      placeholder="blur"
+                      blurDataURL={blurDataUrls[i]}
+                    />
+                  </div>
+                  <div className={styles['title-wrapper']}>
+                    <p className={styles.count}>0{i + 1}</p>
+                    <p className={styles.title}>
+                      <Link href={linkUrl} className={styles.link}>
+                        {title}
+                      </Link>
+                    </p>
+                  </div>
+                  <p className={styles.description}>{description}</p>
+                </div>
+              );
+            })}
+          </HorizontalScroll>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
 export default ProjectSection;
