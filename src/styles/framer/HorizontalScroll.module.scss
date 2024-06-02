@@ -1,0 +1,22 @@
+.container {
+  position: relative;
+  height: 300vh;
+}
+.accordian {
+  position: sticky;
+  top: 0;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  overflow: hidden;
+}
+
+.content {
+  display: flex;
+  gap: 2em;
+}
+.text {
+  position: absolute;
+  top: 5%;
+  color: #8c8c8c;
+}

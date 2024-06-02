@@ -2,12 +2,12 @@ import { getBase64 } from '@/serverUtils';
 import yaml from '@/templates/home.yaml';
 import {
   HeroSection,
-  ProjectSection,
   WithSmoothScroll,
   MissionSection,
   TestimonialSection,
   SkillSection,
   ContactCTASection,
+  ProjectSection,
 } from '@/components';
 
 const fetchImages = async () => {
@@ -21,16 +21,12 @@ const fetchImages = async () => {
   (data.mainSection.blurDataUrl = await getBase64(
     `${srcPrefix}${data.mainSection.image}`
   )),
-    (data.projectSection.blurMobileDataUrls = (await getBase64Helper(
-      data.projectSection.mobileImages
+    (data.missionSection.blurDataUrls = (await getBase64Helper(
+      data.missionSection.images
     )) as unknown as string[]);
-  data.projectSection.blurCardDataUrls = (await getBase64Helper(
-    data.projectSection.cardImages
+  data.projectSection.blurDataUrls = (await getBase64Helper(
+    data.projectSection.images
   )) as unknown as string[];
-  data.missionSection.blurDataUrls = (await getBase64Helper(
-    data.missionSection.images
-  )) as unknown as string[];
-
   return data;
 };
 const Page = async () => {
@@ -42,7 +38,7 @@ const Page = async () => {
         <div className="wrapper">
           <HeroSection {...data.mainSection} />
         </div>
-        <ProjectSection {...data.projectSection} />
+        <ProjectSection />
         <MissionSection {...data.missionSection} />
         <TestimonialSection />
         <SkillSection />
