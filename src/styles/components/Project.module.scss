@@ -1,226 +1,74 @@
-.card-accents {
-  display: none;
+.section {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 10em 0;
 }
+
 .heading {
   font-weight: 500;
   font-size: 1.4rem;
   margin-bottom: 2em;
 }
-.heading-wrapper {
-  border-bottom: 1px solid #c9c9c9;
-}
-.section {
-  margin-top: 8em;
 
-  width: 100%;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
 }
-.subheading {
-  text-transform: uppercase;
-  text-align: left;
-  color: #8c8c8c;
-  font-size: 0.8rem;
-  font-weight: 400;
-  margin: 2em 0;
+.content {
+  max-width: 800px;
 }
-.container-lg {
-  display: none;
+.scroll-container {
+  margin-top: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
 }
-.gallery {
+
+.card {
   position: relative;
-  grid-template-columns: repeat(1, 1fr);
-}
-.flex {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  border-bottom: 1px solid #c9c9c9;
-  margin-bottom: 4em;
+  min-width: 400px;
   height: auto;
 }
-
+.img-wrapper {
+  position: relative;
+  padding-top: 100%;
+  width: 100%;
+}
 .img {
   object-fit: cover;
   position: relative;
-}
-
-.img-wrapper {
-  padding-top: 80%;
-
-  width: 100%;
-  overflow: hidden;
-
-  position: relative;
-  margin: 0 auto;
-}
-
-.img-zoom {
-  transition: 0.3s;
-  display: flex;
-  position: relative;
-  overflow: hidden;
-  justify-content: center;
-}
-.img-zoom .img {
   transition: transform 0.5s ease;
+  pointer-events: none;
 }
-.img-zoom:hover .img {
-  transform: scale(1.1);
-}
-.project-wrapper-sm {
-  display: block;
-}
-.project-sm {
-  font-size: 1.8rem;
-  text-align: center;
-  font-weight: 500;
-  transition: all 0.2s linear;
-  position: relative;
-  display: block;
-  z-index: 300;
-  text-align: left;
-  margin: 1em 0;
-  &:hover {
-    opacity: 0.4;
-    cursor: pointer;
-    transform: translateX(10px);
-  }
+.img-wrapper:hover .img {
+  transform: scale(1.04);
 }
 
-.content-wrapper {
-  display: grid;
-  justify-content: center;
+.title,
+.count {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.link {
+  text-decoration: underline;
+}
+.title-wrapper {
+  margin-top: 2em;
+  border-top: 1px solid #bcbcbc;
+  padding-top: 1em;
+  display: flex;
+  gap: 3em;
   align-items: center;
-  margin: 0 auto;
-  max-width: 600px;
 }
-@media (min-width: 600px) {
-  .content-wrapper {
-    max-width: 1000px;
-  }
-
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(250px, 1fr));
-
-    gap: 2em;
-  }
-  .img-wrapper {
-    height: 300px;
-
-    background-color: black;
-    position: relative;
-  }
+.description {
+  color: #8c8c8c;
+  margin-top: 1em;
 }
-
 @media (min-width: 800px) {
-  .card-accents {
-    display: block;
-  }
-  .project-wrapper-sm {
-    display: none;
-  }
-  .gallery {
-    display: none;
-  }
-  .container-lg {
-    display: block;
-    position: relative;
-  }
-
-  .section {
-    margin-top: 16em;
-    max-width: none;
-  }
-  .content-wrapper {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: repeat(8, 1fr);
-    max-width: none;
-  }
   .content {
-    grid-column: 2/8;
-
-    position: relative;
     max-width: 1000px;
-    margin: 0 auto;
   }
   .heading {
-    font-weight: 500;
-    font-size: 1.8rem;
-    margin-bottom: 2em;
-    grid-column: 1/9;
-  }
-  .heading-wrapper {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    margin-bottom: 2em;
-  }
-  .subheading {
-    text-align: center;
-  }
-  .project-wrapper {
-    border-top: none;
-    padding: 1em 0;
-    margin-top: 1em;
-    transition: all 0.2s linear;
-    position: relative;
-    text-align: center;
-
-    .project {
-      font-size: 2.75rem;
-
-      text-align: center;
-      font-weight: 500;
-
-      position: relative;
-
-      display: inline-block;
-      z-index: 9999;
-      transition: all 0.2s linear;
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
-}
-@media (min-width: 1200px) {
-  .heading-wrapper {
-    border-bottom: none;
-  }
-  .subheading {
-    text-align: left;
-    text-transform: uppercase;
-
-    color: #8c8c8c;
-    font-size: 1rem;
-    font-weight: 500;
-  }
-  .project-wrapper {
-    border-top: 1px solid #c9c9c9;
-    padding: 2em 0;
-    margin-top: 1em;
-    transition: all 0.2s linear;
-    position: relative;
-    text-align: center;
-
-    .project {
-      font-size: 2.75rem;
-      text-align: center;
-      font-weight: 500;
-      transition: all 0.2s linear;
-      position: relative;
-
-      display: inline-block;
-      z-index: 9999;
-      &:hover {
-        opacity: 0.4;
-        cursor: pointer;
-      }
-    }
-    &:hover {
-      opacity: 0.4;
-    }
+    font-size: 2rem;
   }
 }

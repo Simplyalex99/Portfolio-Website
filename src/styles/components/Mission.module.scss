@@ -44,7 +44,7 @@
   transition: transform 0.5s ease;
 }
 .img-wrapper:hover .img {
-  transform: scale(1.1);
+  transform: scale(1.03);
 }
 
 .description {
@@ -105,10 +105,10 @@
 }
 
 @media (min-width: 1200px) {
-  .section{
-    height:5000px;
+  .section {
+    height: 5000px;
   }
-  .heading{
+  .heading {
     margin-bottom: 1em;
   }
   .container {
@@ -126,7 +126,7 @@
   .card2 {
     top: 300vh;
   }
-  .heading{
-    font-size:16rem;
+  .heading {
+    font-size: 16rem;
   }
 }
