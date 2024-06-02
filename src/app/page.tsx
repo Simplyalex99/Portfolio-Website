@@ -33,9 +33,7 @@ const Page = async () => {
   return (
     <>
       <WithSmoothScroll>
-        <div className="wrapper">
-          <HeroSection />
-        </div>
+        <HeroSection />
         <ProjectSection />
         <MissionSection {...data.missionSection} />
         <TestimonialSection />
