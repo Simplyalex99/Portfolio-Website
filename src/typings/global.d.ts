@@ -1,17 +1,19 @@
 declare module '*.yaml' {
   const yaml: {
+    heroSection: {
+      imageUrl: string;
+      blurDataUrl: string;
+    };
     projectSection: {
-      mobileImages: Array<string>;
-      blurMobileDataUrls: Array<string>;
-      cardImages: Array<string>;
-      blurCardDataUrls: Array<string>;
+      images: Array<string>;
+      blurDataUrls: Array<string>;
       heading: string;
       content: Array<{
-        title: string;
         imageUrl: string;
+        title: string;
         linkUrl: string;
-        backgroundColor: string;
-        variant: 'left' | 'right';
+        description: string;
+        alt: string;
       }>;
     };
     mainSection: {
