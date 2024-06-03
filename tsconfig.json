@@ -27,7 +27,8 @@
       "@/config": ["./src/config/secrets"],
       "@/serverUtils": ["./src/serverUtils/index"],
       "@/helpers": ["./src/helpers/index"],
-      "@/fonts": ["./src/fonts/index"]
+      "@/fonts": ["./src/fonts/index"],
+      "@/lib": ["./src/lib/index"]
     }
   },
   "include": [
@@ -35,7 +36,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "./typings/global.d.ts"
+    "./typings/global.d.ts",
+    "src/lib/index.js"
   ],
   "exclude": ["node_modules"]
 }
