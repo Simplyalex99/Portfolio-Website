@@ -11,10 +11,18 @@ const redis = new Redis({
 });
 const ratelimit = new Ratelimit({
   redis: redis,
-  limiter: Ratelimit.slidingWindow(50, '10 s'),
+  limiter: Ratelimit.slidingWindow(2, '10 s'),
 });
 
 export const middleware = async (request: NextRequest) => {
+  if (!process.env.REDIS_URL || !process.env.REDIS_TOKEN) {
+    console.error('Missing configuration.');
+    return NextResponse.json(
+      { success: false, error: 'Internal Server Error' },
+      { status: 500 }
+    );
+  }
+
   if (!isHttps(request)) {
     return NextResponse.json(
       {
