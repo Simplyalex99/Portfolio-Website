@@ -101,7 +101,11 @@ export const Navbar = () => {
                       navbarStyles['nav-item']
                     }  `}
                   >
-                    <span>{ActiveTabType.HOME}</span>
+                    <span
+                      className={`${playfair.className} ${navbarStyles.font}`}
+                    >
+                      {ActiveTabType.HOME}
+                    </span>
                   </button>
                 </div>
               </Link>
@@ -115,10 +119,14 @@ export const Navbar = () => {
                   onClick={() => setActiveTab(ActiveTabType.CONTACT)}
                 >
                   <button
-                    type="button"
                     className={`${navbarStyles['nav-item']} ${navbarStyles.contact}`}
                   >
-                    <span> {ActiveTabType.CONTACT}</span>
+                    <span
+                      className={`${playfair.className} ${navbarStyles.font}`}
+                    >
+                      {' '}
+                      {ActiveTabType.CONTACT}
+                    </span>
                   </button>
                 </div>
               </Link>

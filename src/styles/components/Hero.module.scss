@@ -120,9 +120,7 @@
 
 .img-wrapper {
   margin: 0 auto;
-  max-height: 650px !important;
   width: 100%;
-
   height: 650px;
   margin-bottom: 2.5em;
   display: flex;
@@ -165,6 +163,7 @@
     max-width: none;
     width: 100%;
     margin: 0;
+    height: 600px;
   }
   .graduation {
     align-self: flex-end;
