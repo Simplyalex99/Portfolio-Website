@@ -8,8 +8,8 @@
   left: 0;
   width: 100%;
   z-index: 998;
-  //background-color: white;
 }
+
 .menu-wrapper {
   .menu-icon {
     z-index: 999;
@@ -87,15 +87,14 @@
         .nav-item {
           border: none;
           background: none;
-          font-size: 1.3rem;
+          font-size: 1.6rem;
           padding: 11px 10px 11px 10px;
           color: black !important;
           line-height: normal;
         }
         .contact {
           padding: 11px 15px 9px 11px;
-          background-color: black;
-          color: white !important;
+
           cursor: pointer;
         }
 
@@ -132,6 +131,9 @@
   }
 }
 @media (min-width: 940px) {
+  .font {
+    font-family: 'Inter';
+  }
   .navbar-bg {
     background-color: transparent;
 
