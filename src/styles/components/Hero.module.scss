@@ -67,7 +67,7 @@
   font-size: clamp(1.2rem, 2.5vw, 4rem);
 }
 .heading {
-  font-size: clamp(1.5rem, 16vw, 10rem);
+  font-size: clamp(1.5rem, 16vw, 11rem);
 }
 
 .content {
@@ -128,6 +128,7 @@
   overflow: hidden;
   justify-content: center;
   align-items: center;
+
   .img {
     object-fit: cover;
   }
@@ -164,6 +165,7 @@
     width: 100%;
     margin: 0;
     height: 600px;
+    border-radius: 15px;
   }
   .graduation {
     align-self: flex-end;
