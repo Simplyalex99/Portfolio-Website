@@ -1,21 +1,14 @@
 'use client';
-import { useRef } from 'react';
 import styles from '@/styles/components/Skill.module.scss';
 import yaml from '@/templates/home.yaml';
 import Image from 'next/image';
-import { useTransform, useScroll, LazyMotion, m } from 'framer-motion';
-import { loadFeatures } from '@/helpers';
 import { LinkIds } from '@/enums';
 import { LineSVG } from '../svg/others/Line';
+import ImageParallax from '../framer/ImageParallax';
 export const SkillSection = () => {
   const { subheading, description, imageUrl, alt, blurDataUrl } =
     yaml.skillSection;
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['center end', 'end start'],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 500]);
+
   return (
     <section className={styles.section} id={LinkIds.SKILLS_ID}>
       <div className={`wrapper ${styles.wrapper}`}>
@@ -30,21 +23,19 @@ export const SkillSection = () => {
           <div className={styles.box2}>
             <p className={styles.description}>{description}</p>
             <div className={styles['parallax-container']}>
-              <div className={styles.spacer} />
-              <div className={styles['scroll-content']} ref={ref}>
-                <LazyMotion features={loadFeatures}>
-                  <m.div style={{ y }} className={styles['img-wrapper']}>
-                    <Image
-                      alt={alt}
-                      src={imageUrl}
-                      fill
-                      placeholder="blur"
-                      blurDataURL={blurDataUrl}
-                    />
-                  </m.div>
-                </LazyMotion>
-              </div>
-              <div className={styles.spacer} />
+              <ImageParallax
+                className={styles['img-wrapper']}
+                containerClassName={styles['scroll-content']}
+              >
+                <Image
+                  alt={alt}
+                  src={imageUrl}
+                  fill
+                  placeholder="blur"
+                  blurDataURL={blurDataUrl}
+                  className={styles.img}
+                />
+              </ImageParallax>
             </div>
           </div>
         </div>
