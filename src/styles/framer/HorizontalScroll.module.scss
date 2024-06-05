@@ -15,8 +15,20 @@
   display: flex;
   gap: 2em;
 }
-.text {
+.text-container {
   position: absolute;
-  top: 3%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.text {
+  position: relative;
   color: #8c8c8c;
+}
+.arrow {
+  position: relative;
+  path {
+    stroke: #8c8c8c;
+  }
 }
