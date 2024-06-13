@@ -8,6 +8,7 @@ import {
   SkillSection,
   ContactCTASection,
   ProjectSection,
+  AboutSection,
 } from '@/components';
 
 const fetchImages = async () => {
@@ -35,6 +36,7 @@ const Page = async () => {
       <WithSmoothScroll>
         <HeroSection />
         <ProjectSection />
+        <AboutSection />
         <MissionSection {...data.missionSection} />
         <TestimonialSection />
         <SkillSection />

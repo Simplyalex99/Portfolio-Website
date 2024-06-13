@@ -7,3 +7,4 @@ export { SkillSection } from './sections/SkillSection';
 export { ContactCTASection } from './sections/ContactCTASection';
 export { ProjectSection } from './sections/ProjectSection';
 export { HeroSection } from './sections/HeroSection';
+export { AboutSection } from './sections/AboutSection';
