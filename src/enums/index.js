@@ -8,3 +8,4 @@ export {
   HeroLinksTestIds,
   ActionLinks,
 } from './testIds';
+export { Socials } from './socials';
