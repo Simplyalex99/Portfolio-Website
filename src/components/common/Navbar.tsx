@@ -25,6 +25,7 @@ export const activeTabFactory = (pathname: string): ActiveTabType => {
 
 export const Navbar = () => {
   const pathname = usePathname();
+
   const [activeTab, setActiveTab] = useState<ActiveTabType>(ActiveTabType.HOME);
   const getIsActive = (type: ActiveTabType) => {
     return activeTab === type ? navbarStyles['active-tab'] : '';
@@ -119,7 +120,9 @@ export const Navbar = () => {
                   onClick={() => setActiveTab(ActiveTabType.CONTACT)}
                 >
                   <button
-                    className={`${navbarStyles['nav-item']} ${navbarStyles.contact}`}
+                    className={`${getIsActive(ActiveTabType.CONTACT)} ${
+                      navbarStyles['nav-item']
+                    }  ${navbarStyles.contact}`}
                   >
                     <span
                       className={`${playfair.className} ${navbarStyles.font}`}
