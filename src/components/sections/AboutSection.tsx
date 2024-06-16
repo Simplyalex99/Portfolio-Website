@@ -39,7 +39,7 @@ export const AboutSection = () => {
       scrollTrigger: {
         trigger: ref.current,
         start: 'top 100%',
-        end: 'top 55%',
+        end: 'top 25%',
         scrub: true,
         markers: false,
       },
