@@ -1,39 +1,10 @@
-'use client';
-import { useRef } from 'react';
 import styles from '@/styles/components/Testimonial.module.scss';
 import Link from 'next/link';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import SplitType, { TargetElement } from 'split-type';
+
 import yaml from '@/templates/home.yaml';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TextReveal } from '../framer/TextReveal';
 
 export const TestimonialSection = () => {
-  const refs = useRef<Array<HTMLParagraphElement | null>>([]);
-  if (typeof window !== 'undefined') {
-    gsap.registerPlugin(useGSAP);
-    gsap.registerPlugin(ScrollTrigger);
-  }
-  useGSAP(() => {
-    refs.current = refs.current.slice(0, refs.current.length);
-
-    refs.current.map((ref) => {
-      const texts = new SplitType(ref as TargetElement, {
-        types: 'chars',
-      });
-      gsap.from(texts.chars, {
-        scrollTrigger: {
-          trigger: ref,
-          start: 'top 100%',
-          end: 'top 20%',
-          scrub: true,
-          markers: false,
-        },
-        opacity: 0.2,
-        stagger: 0.1,
-      });
-    });
-  }, []);
   const { content } = yaml.testimonialSection;
   return (
     <section className={`${styles.section}`}>
@@ -46,12 +17,7 @@ export const TestimonialSection = () => {
               <>
                 <div className={styles.spacer}></div>
                 <div className={styles['testimonial-wrapper']} key={company}>
-                  <p
-                    className={styles.testimonial}
-                    ref={(e) => (refs.current[i] = e)}
-                  >
-                    {description}
-                  </p>
+                  <TextReveal text={description} />
 
                   <p className={styles.author}>{author}</p>
                   <p className={styles.from}>
