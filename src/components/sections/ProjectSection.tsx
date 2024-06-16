@@ -31,12 +31,12 @@ export const ProjectSection = () => {
                     />
                   </div>
                   <div className={styles['title-wrapper']}>
-                    <p className={styles.count}>0{i + 1}</p>
                     <p className={styles.title}>
                       <Link href={linkUrl} className={styles.link}>
                         {title}
                       </Link>
                     </p>
+                    <p className={styles.count}>(0{i + 1})</p>
                   </div>
                   <p className={styles.description}>{description}</p>
                 </div>

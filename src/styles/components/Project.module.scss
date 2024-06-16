@@ -26,7 +26,7 @@
 
 .card {
   position: relative;
-  min-width: 400px;
+  min-width: 300px;
   height: auto;
 }
 .img-wrapper {
@@ -47,7 +47,11 @@
 .title,
 .count {
   font-size: 1.3rem;
-  font-weight: 400;
+  font-weight: 500;
+}
+.count {
+  font-size: 1rem;
+  font-weight: 500;
 }
 .link {
   text-decoration: underline;
@@ -59,6 +63,7 @@
   display: flex;
   gap: 3em;
   align-items: center;
+  justify-content: space-between;
 }
 .description {
   color: #8c8c8c;
@@ -70,5 +75,8 @@
   }
   .heading {
     font-size: 2rem;
+  }
+  .card {
+    min-width: 400px;
   }
 }
