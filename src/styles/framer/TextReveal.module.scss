@@ -1,0 +1,18 @@
+.paragraph {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.7rem;
+  font-weight: 500;
+  line-height: 1 !important;
+  margin-bottom: 1em;
+}
+.word {
+  margin-right: 12px;
+  margin-top: 12px;
+  position: relative;
+}
+
+.shadow {
+  position: absolute;
+  opacity: 0.1;
+}
