@@ -56,28 +56,20 @@ projectSection:
       title: Open review
       linkUrl: https://github.com/Simplyalex99/OpenReview
       alt: open review project
-      description: >
-        A dashboard app to help businesses gain competitive advantages and enchance decision-making using natural language processing.
     - imageUrl: '/images/jtech.webp'
       title: Jtech Plumbing
       alt: plumbing website project
       linkUrl: https://www.jtechplumbing.ca/
-      description: >
-        A plumbing and HVAC company. I worked as a frontend developer, UI/UX designer and helped with SEO optimization to rank in the top 5 of Google search.
     - imageUrl: '/images/sfl.webp'
       title: SoftwareForLove
       alt: open source project
       linkUrl: https://github.com/Software-For-Love/software-for-love-site
-      description: >
-        A non profit organization that helps provider software solutions. As a team member, I helped
-        implementing UI features and mentor new developers.
+
     - imageUrl: '/images/oasis.webp'
       alt: open source project
       title: Oasis
       linkUrl: https://github.com/Simplyalex99/oasis
-      description: >
-        An open source project about a chat platform for developers. As a volunteer, I helped
-        refactor code, fixed bugs, and implement UI features.
+
 contactSection:
   image: /images/snapback-photo.webp
   blurDataUrl: ''

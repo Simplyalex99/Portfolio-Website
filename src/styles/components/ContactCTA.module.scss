@@ -24,8 +24,8 @@
   justify-content: center;
   border: 1px solid white !important;
   margin: 0 auto;
-
-  padding: 1.2em;
+  width: 190px !important;
+  padding: 1.4em 1em !important;
   &:hover {
     background-color: none;
     color: white !important;
@@ -33,7 +33,7 @@
 }
 
 .heading {
-  font-size: clamp(3rem, 10vw, 10rem);
+  font-size: clamp(3.8rem, 10vw, 8rem);
 
   text-align: center;
   color: white;
@@ -78,7 +78,7 @@
 }
 @media (min-width: 600px) {
   .button {
-    padding: 1.2em 0 !important;
+    padding: 1.4em 0 !important;
   }
 }
 @media (min-width: 800px) {
@@ -87,6 +87,7 @@
   }
   .button {
     padding: 1.6em 0 !important;
+    width: 200px !important;
   }
   .section {
     padding: 10em 0;
