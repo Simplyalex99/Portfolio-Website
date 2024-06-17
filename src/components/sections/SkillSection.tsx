@@ -6,8 +6,14 @@ import { LinkIds } from '@/enums';
 import { LineSVG } from '../svg/others/Line';
 import ImageParallax from '../framer/ImageParallax';
 export const SkillSection = () => {
-  const { subheading, description, imageUrl, alt, blurDataUrl } =
-    yaml.skillSection;
+  const {
+    subheading,
+    description,
+    imageUrl,
+    alt,
+    blurDataUrl,
+    briefSubheading,
+  } = yaml.skillSection;
 
   return (
     <section className={styles.section} id={LinkIds.SKILLS_ID}>
@@ -19,6 +25,7 @@ export const SkillSection = () => {
               <LineSVG />
             </div>
             <h2 className={styles.subheading}>{subheading}</h2>
+            <h2 className={styles['brief-subheading']}>{briefSubheading}</h2>
           </div>
           <div className={styles.box2}>
             <p className={styles.description}>{description}</p>

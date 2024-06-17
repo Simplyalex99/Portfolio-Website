@@ -7,6 +7,7 @@ declare module '*.yaml' {
       images: Array<string>;
       blurDataUrls: Array<string>;
       heading: string;
+      briefHeading: string;
       content: Array<{
         imageUrl: string;
         title: string;
@@ -49,6 +50,7 @@ declare module '*.yaml' {
       blurDataUrl: string;
       subheading: string;
       description: string;
+      briefSubheading: string;
       alt: string;
     };
     contactSection: {
