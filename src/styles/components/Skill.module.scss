@@ -27,14 +27,19 @@
 }
 .scroll,
 .subheading,
+.brief-subheading,
 .description {
   color: white;
 }
 .description {
   font-size: 1.1rem;
 }
-.subheading {
+.subheading,
+.brief-subheading {
   font-weight: 500;
+}
+.subheading {
+  display: none;
 }
 
 .scroll {
@@ -76,8 +81,12 @@
   .scroll-container {
     grid-column: 1/4;
   }
+  .brief-subheading {
+    display: none;
+  }
   .subheading {
     grid-column: 5/-1;
+    display: block;
   }
   .box2 {
     display: grid;

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styles from '@/styles/components/Project.module.scss';
 import HorizontalScroll from '../framer/HorizontalScroll';
 export const ProjectSection = () => {
-  const { content, heading, blurDataUrls } = yaml.projectSection;
+  const { content, heading, blurDataUrls, briefHeading } = yaml.projectSection;
 
   return (
     <>
@@ -12,6 +12,7 @@ export const ProjectSection = () => {
         <div className={styles.container}>
           <div className={styles.content}>
             <h2 className={styles.heading}>{heading}</h2>
+            <h2 className={styles['heading-brief']}>{briefHeading}</h2>
           </div>
 
           <HorizontalScroll>

@@ -1,10 +1,13 @@
 .section {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
-  padding: 5em 0;
+  padding: 4em 0;
 }
 
 .heading {
+  display: none;
+}
+.heading-brief {
   font-weight: 500;
   font-size: 1.4rem;
   margin-bottom: 2em;
@@ -73,8 +76,15 @@
   .content {
     max-width: 1000px;
   }
+  .heading-brief {
+    display: none;
+  }
   .heading {
     font-size: 2rem;
+    font-weight: 500;
+
+    margin-bottom: 2em;
+    display: block;
   }
   .card {
     min-width: 400px;
