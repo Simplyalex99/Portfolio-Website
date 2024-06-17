@@ -13,10 +13,10 @@ export const HeroSection = () => {
       <>
         <div className={styles.container}>
           <p className={` ${styles.subheading1}`}>crafting</p>
-          <h1 className={`${styles.heading}`}> aesthetic</h1>
+          <h1 className={`${styles.heading}`}>aesthetic</h1>
           <p className={`${styles.subheading2}`}>designs</p>
 
-          <Link href={Links.CONTACT_PATH} className={styles['btn-container']}>
+          <Link href={Links.CONTACT_PATH}>
             <Button type="button" width="md" className={styles.btn}>
               Contact me
             </Button>
