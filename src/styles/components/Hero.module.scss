@@ -67,7 +67,7 @@
   font-size: clamp(1.5rem, 4.5vw, 3rem);
 }
 .heading {
-  font-size: clamp(1.6rem, 14vw, 12rem);
+  font-size: clamp(1.6rem, 14.4vw, 12rem);
 }
 
 .content {
@@ -77,7 +77,7 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  margin-top: 8em;
+  margin-top: 6em;
 }
 .subcontent {
   display: flex;
@@ -123,7 +123,7 @@
 .img-wrapper {
   margin: 0 auto;
   width: 100%;
-  height: 500px;
+  height: 550px;
   margin-bottom: 2.5em;
   display: flex;
   position: relative;
