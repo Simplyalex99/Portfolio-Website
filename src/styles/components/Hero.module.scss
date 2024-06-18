@@ -18,10 +18,27 @@
 .small-container {
   display: block;
 }
+.scroll-container {
+  transform: translateY(100%);
+}
+.scroll {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 1em;
+}
+.line {
+  display: flex;
+  justify-content: center;
+}
+.svg {
+  line {
+    stroke: black !important;
+  }
+}
 .section {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
-  padding: 8em 0;
+  padding: 1em 0;
   position: relative;
 }
 .degree-short-form {
@@ -52,6 +69,10 @@
 .container {
   margin: 0 auto;
   max-width: 1400px;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
 }
 .hidden {
   overflow: hidden;
@@ -80,7 +101,6 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  margin-top: 6em;
 }
 .subcontent {
   display: flex;
@@ -144,6 +164,9 @@
   }
 }
 @media (min-width: 800px) {
+  .scroll-container {
+    display: none;
+  }
   .container {
     height: 80vh;
 

@@ -6,6 +6,7 @@ import Link from 'next/link';
 import yaml from '@/templates/home.yaml';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import Button from '../common/Button';
+import LineSVG from '../svg/others/Line';
 import { Links } from '@/enums';
 const variants = {
   initial: {
@@ -44,7 +45,7 @@ const imageVariant = {
     y: 10,
     transition: {
       ease: 'linear',
-      delay: 0.8,
+      delay: 0.5,
     },
   },
 };
@@ -90,6 +91,14 @@ export const HeroSection = () => {
                   Contact me
                 </Button>
               </Link>
+            </motion.div>
+          </div>
+          <div className={`${styles.hidden} ${styles['scroll-container']}`}>
+            <motion.div variants={variants}>
+              <p className={styles.scroll}>scroll</p>
+              <div className={styles.line}>
+                <LineSVG className={styles.svg} height={70} />
+              </div>
             </motion.div>
           </div>
         </motion.div>
