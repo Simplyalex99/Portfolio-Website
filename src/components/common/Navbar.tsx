@@ -68,9 +68,10 @@ export const Navbar = () => {
             <Link href={HOME_PATH} data-testid={NavLinksTestIds.LOGO}>
               <button
                 type="button"
-                className={`${navbarStyles['custom-link']} ${playfair.className}`}
+                className={`${navbarStyles['custom-link']}`}
+                style={{ fontWeight: 500 }}
               >
-                MyPortfolio
+                Alex
               </button>
             </Link>
           </div>
