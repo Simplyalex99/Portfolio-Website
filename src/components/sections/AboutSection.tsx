@@ -138,6 +138,7 @@ export const AboutSection = () => {
                     src={
                       process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_SKATEBOARD ?? ''
                     }
+                    id={'video-skateboard'}
                     width={600}
                     height={400}
                     className={`${styles.video}  `}
@@ -164,6 +165,7 @@ export const AboutSection = () => {
                     src={
                       process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_PHOTOGRAPHY ?? ''
                     }
+                    id={'video-photography'}
                     width={600}
                     height={400}
                     className={`${styles.video} `}
@@ -188,6 +190,7 @@ export const AboutSection = () => {
                 >
                   <CldVideo
                     src={process.env.NEXT_PUBLIC_CLOUDINARY_VIDEO_ART ?? ''}
+                    id={'video-art'}
                     width={600}
                     height={400}
                     className={`${styles.video}  `}
