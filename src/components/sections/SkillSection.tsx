@@ -3,7 +3,6 @@ import styles from '@/styles/components/Skill.module.scss';
 import yaml from '@/templates/home.yaml';
 import Image from 'next/image';
 import { LinkIds } from '@/enums';
-import { LineSVG } from '../svg/others/Line';
 import ImageParallax from '../framer/ImageParallax';
 export const SkillSection = () => {
   const {
@@ -20,10 +19,6 @@ export const SkillSection = () => {
       <div className={`wrapper ${styles.wrapper}`}>
         <div className={styles.container}>
           <div className={styles.box1}>
-            <div className={styles['scroll-container']}>
-              <p className={styles.scroll}>Scroll</p>
-              <LineSVG />
-            </div>
             <h2 className={styles.subheading}>{subheading}</h2>
             <h2 className={styles['brief-subheading']}>{briefSubheading}</h2>
           </div>
