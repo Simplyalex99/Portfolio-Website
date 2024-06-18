@@ -53,6 +53,9 @@
   margin: 0 auto;
   max-width: 1400px;
 }
+.hidden {
+  overflow: hidden;
+}
 .subheading1,
 .subheading2,
 .heading {
@@ -199,6 +202,7 @@
   .content {
     max-width: 1400px;
     margin: 0 auto;
+    margin-top: 2em;
   }
   .img-wrapper {
     order: 2;
