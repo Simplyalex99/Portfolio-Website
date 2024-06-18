@@ -45,7 +45,6 @@ const imageVariant = {
     y: 10,
     transition: {
       ease: 'linear',
-      delay: 0.2,
     },
   },
 };
