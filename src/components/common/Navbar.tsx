@@ -42,14 +42,6 @@ export const Navbar = () => {
   useEffect(() => {
     const currentTab = activeTabFactory(pathname);
     setActiveTab(currentTab);
-    const enableNav = setTimeout(() => {
-      const el = document.getElementById(toggleProps.navbarId);
-      el?.classList.add(navbarStyles['display-nav']);
-    }, 1000);
-
-    return () => {
-      clearTimeout(enableNav);
-    };
   }, [pathname]);
   return (
     <div className="container">

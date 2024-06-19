@@ -1,7 +1,8 @@
 'use client';
 import { useRef } from 'react';
-import { useScroll, useTransform, motion } from 'framer-motion';
+import { useScroll, useTransform, m, LazyMotion } from 'framer-motion';
 import styles from '@/styles/framer/HorizontalScroll.module.scss';
+import { loadFeatures } from '@/helpers';
 import RightArrowSVG from '../svg/arrows/RightArrow';
 export const HorizontalScroll = ({
   children,
@@ -19,10 +20,11 @@ export const HorizontalScroll = ({
           <p className={styles.text}>Scroll</p>
           <RightArrowSVG className={styles.arrow} />
         </div>
-
-        <motion.div className={styles.content} style={{ x }}>
-          {children}
-        </motion.div>
+        <LazyMotion features={loadFeatures}>
+          <m.div className={styles.content} style={{ x }}>
+            {children}
+          </m.div>
+        </LazyMotion>
       </div>
     </div>
   );

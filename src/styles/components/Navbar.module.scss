@@ -47,22 +47,22 @@
 
     text-transform: none;
   }
-.display-nav{
-  display: block !important;
-}
+  .display-nav {
+    display: block !important;
+  }
   .nav-container {
-    display: none;
     position: fixed;
     height: 100vh;
-    transform: translateX(-100%);
-    width: 100%;
 
+    width: 0px;
+    transition: width 0.5s ease;
+    overflow: hidden;
     top: 0;
     left: 0;
     z-index: 999;
     text-transform: uppercase;
     background-color: white;
-    transition: transform 0.5s ease-in-out;
+
     .close-icon-wrapper {
       margin-left: 2em;
       margin-top: 2em;
@@ -116,8 +116,7 @@
   }
 }
 .open-nav {
-  transform: translateX(0%) !important;
-
+  width: 100% !important;
   display: block !important;
 }
 @media (min-width: 0px) and (max-width: 300px) {
