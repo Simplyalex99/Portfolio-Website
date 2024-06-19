@@ -21,7 +21,7 @@
 
 .section {
   margin-top: 0 !important;
-  margin-bottom: 0 !important;
+  margin-bottom: 6em !important;
   padding: 1em 0;
   position: relative;
 }
@@ -220,5 +220,10 @@
   }
   .capsul {
     border-radius: 15px;
+  }
+  .btn {
+    padding: 1.3em 1em !important;
+    font-size: 1.2rem;
+    width: 200px !important;
   }
 }
