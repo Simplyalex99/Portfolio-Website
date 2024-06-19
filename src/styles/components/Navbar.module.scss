@@ -47,8 +47,11 @@
 
     text-transform: none;
   }
-
+.display-nav{
+  display: block !important;
+}
   .nav-container {
+    display: none;
     position: fixed;
     height: 100vh;
     transform: translateX(-100%);
