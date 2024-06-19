@@ -1,8 +1,14 @@
 'use client';
 import { useRef } from 'react';
 import styles from '@/styles/framer/TextReveal.module.scss';
-import { useScroll, motion, useTransform, MotionValue } from 'framer-motion';
-
+import {
+  useScroll,
+  useTransform,
+  MotionValue,
+  m,
+  LazyMotion,
+} from 'framer-motion';
+import { loadFeatures } from '@/helpers';
 export const TextReveal = ({ text }: { text: string }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -12,21 +18,23 @@ export const TextReveal = ({ text }: { text: string }) => {
   });
   const words = text.split(' ');
   return (
-    <motion.p ref={ref} className={styles.paragraph}>
-      {words.map((word, i) => {
-        const start = i / words.length;
-        const end = start + 1 / words.length;
-        return (
-          <Word
-            key={`${word}-${i}`}
-            range={[start, end]}
-            progress={scrollYProgress}
-          >
-            {word}
-          </Word>
-        );
-      })}
-    </motion.p>
+    <LazyMotion features={loadFeatures}>
+      <m.p ref={ref} className={styles.paragraph}>
+        {words.map((word, i) => {
+          const start = i / words.length;
+          const end = start + 1 / words.length;
+          return (
+            <Word
+              key={`${word}-${i}`}
+              range={[start, end]}
+              progress={scrollYProgress}
+            >
+              {word}
+            </Word>
+          );
+        })}
+      </m.p>
+    </LazyMotion>
   );
 };
 const Word = ({
@@ -42,7 +50,8 @@ const Word = ({
   return (
     <span className={styles.word}>
       <span className={styles.shadow}>{children}</span>
-      <motion.span style={{ opacity }}>{children}</motion.span>
+
+      <m.span style={{ opacity }}>{children}</m.span>
     </span>
   );
 };

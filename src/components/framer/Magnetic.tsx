@@ -1,7 +1,7 @@
 'use client';
 import React, { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
-
+import { m, LazyMotion } from 'framer-motion';
+import { loadFeatures } from '@/helpers';
 export const Magnetic = ({ children }: { children: React.ReactNode }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -21,15 +21,17 @@ export const Magnetic = ({ children }: { children: React.ReactNode }) => {
   };
   const { x, y } = position;
   return (
-    <motion.div
-      ref={ref}
-      onMouseMove={mouseMoveHandler}
-      onMouseLeave={mouseLeaveHandler}
-      animate={{ x, y }}
-      transition={{ type: 'spring', stiffness: 50, damping: 15, mass: 0.1 }}
-    >
-      {children}
-    </motion.div>
+    <LazyMotion features={loadFeatures}>
+      <m.div
+        ref={ref}
+        onMouseMove={mouseMoveHandler}
+        onMouseLeave={mouseLeaveHandler}
+        animate={{ x, y }}
+        transition={{ type: 'spring', stiffness: 50, damping: 15, mass: 0.1 }}
+      >
+        {children}
+      </m.div>
+    </LazyMotion>
   );
 };
 
