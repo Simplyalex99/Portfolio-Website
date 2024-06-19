@@ -53,8 +53,9 @@
     height: 100vh;
     transform: translateX(-100%);
     width: 100%;
+
     top: 0;
-    right: 0;
+    left: 0;
     z-index: 999;
     text-transform: uppercase;
     background-color: white;
@@ -113,6 +114,7 @@
 }
 .open-nav {
   transform: translateX(0%) !important;
+
   display: block !important;
 }
 @media (min-width: 0px) and (max-width: 300px) {
