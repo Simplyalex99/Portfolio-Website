@@ -1,143 +1,199 @@
+.active-tab {
+  font-weight: bold;
+}
 .navbar-bg {
-  z-index: 900;
-  height: auto;
-  padding-top: 1.4em;
-  padding-bottom: 1.4em;
-  position: absolute;
+  display: none;
+}
+.light-menu {
+  path {
+    fill: white !important;
+    stroke: white !important;
+  }
+}
+.nav-sm {
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   z-index: 998;
 }
+.navigation {
+  position: relative;
+  margin-top: 2em !important;
+  margin-left: 2em !important;
 
-.menu-wrapper {
-  .menu-icon {
-    z-index: 999;
-    stroke-width: 0.2;
-    cursor: pointer;
-    path {
-      fill: black;
-      stroke: black;
+  .menu-wrapper {
+    .menu {
+      z-index: 998;
+      stroke-width: 0.2;
+      cursor: pointer;
+      path {
+        fill: black;
+        stroke: black;
+      }
     }
   }
 }
 
-.container {
-  position: relative;
-  justify-content: space-between;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  .custom-link-wrapper {
-    text-align: center;
+.mobile-menu {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: white;
+  z-index: 999;
+  transform-origin: center top;
+  .flex-mobile {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    gap: 2em;
     justify-content: center;
     align-items: center;
-    z-index: 1;
-  }
-  .custom-link {
-    font-size: 1.1rem;
-
-    margin-left: 1em;
-    padding: 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: none;
-
-    text-transform: none;
-  }
-  .display-nav {
-    display: block !important;
-  }
-  .nav-container {
-    position: fixed;
-    height: 100vh;
-
-    width: 0px;
-
-    transition: width 0.5s ease;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    text-transform: uppercase;
-    background-color: white;
-
-    .close-icon-wrapper {
-      margin-left: 2em;
-      margin-top: 2em;
-      .close-icon {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        margin-right: 2em;
-        margin-bottom: 2em;
-        cursor: pointer;
-        path {
-          stroke: #000000 !important;
-        }
+    .hidden {
+      overflow: hidden;
+      .mobile-link {
+        font-size: 2.5rem;
+        text-transform: uppercase;
       }
     }
-    .links-wrapper {
-      display: flex;
+  }
+}
+.close-wrapper {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 2em;
+  margin-bottom: 2em;
+  .close {
+    path {
+      stroke: #000000 !important;
+    }
+  }
+}
+@media (min-width: 940px) {
+  .nav-sm {
+    display: none;
+  }
+  .navbar-bg {
+    z-index: 900;
+    height: auto;
+    padding-top: 1.4em;
+    padding-bottom: 1.4em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 998;
+    display: none;
+  }
 
-      flex-direction: column;
-      justify-content: center;
-      height: 100%;
+  .menu-wrapper {
+    .menu-icon {
+      z-index: 999;
+      stroke-width: 0.2;
+      cursor: pointer;
+      path {
+        fill: black;
+        stroke: black;
+      }
+    }
+  }
+
+  .container {
+    position: relative;
+    justify-content: space-between;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .custom-link-wrapper {
       text-align: center;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+    .custom-link {
+      font-size: 1.1rem;
 
-      .nav-item-wrapper {
-        margin-bottom: 2em;
-        .nav-item {
-          border: none;
-          background: none;
-          font-size: 1.6rem;
-          padding: 11px 10px 11px 10px;
-          color: black !important;
-          line-height: normal;
-        }
-        .contact {
-          padding: 11px 15px 9px 11px;
+      margin-left: 1em;
+      padding: 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: none;
 
+      text-transform: none;
+    }
+    .display-nav {
+      display: block !important;
+    }
+    .nav-container {
+      position: fixed;
+      height: 100vh;
+
+      width: 0px;
+
+      transition: width 0.5s ease;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      text-transform: uppercase;
+      background-color: white;
+
+      .close-icon-wrapper {
+        margin-left: 2em;
+        margin-top: 2em;
+        .close-icon {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          margin-right: 2em;
+          margin-bottom: 2em;
           cursor: pointer;
+          path {
+            stroke: #000000 !important;
+          }
         }
+      }
+      .links-wrapper {
+        display: flex;
 
-        .active-tab {
-          font-weight: bold;
-        }
-        &:hover {
-          span {
-            text-decoration: underline;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+
+        .nav-item-wrapper {
+          margin-bottom: 2em;
+          .nav-item {
+            border: none;
+            background: none;
+            font-size: 1.6rem;
+            padding: 11px 10px 11px 10px;
+            color: black !important;
+            line-height: normal;
+          }
+          .contact {
+            padding: 11px 15px 9px 11px;
+
             cursor: pointer;
+          }
+
+          &:hover {
+            span {
+              text-decoration: underline;
+              cursor: pointer;
+            }
           }
         }
       }
     }
   }
-}
-.open-nav {
-  width: 100% !important;
 
-  overflow: none !important;
-}
-@media (min-width: 0px) and (max-width: 300px) {
-  .nav-container {
-    display: none;
-  }
-}
-
-@media (min-width: 600px) {
-  .container {
-    .custom-link-wrapper {
-      .custom-link {
-        font-size: 1.1rem;
-      }
-    }
-  }
-}
-@media (min-width: 940px) {
   .font {
     font-family: 'Inter';
   }
@@ -145,6 +201,7 @@
     background-color: transparent;
 
     backdrop-filter: blur(0px);
+    display: block;
   }
   .container {
     margin-top: 0 !important;
