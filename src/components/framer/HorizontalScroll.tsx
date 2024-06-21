@@ -18,7 +18,7 @@ export const HorizontalScroll = ({
       <div className={styles.accordian}>
         <div className={styles['text-container']}>
           <p className={styles.text}>Scroll</p>
-          <RightArrowSVG className={styles.arrow} />
+          <RightArrowSVG className="arrow" />
         </div>
         <LazyMotion features={loadFeatures}>
           <m.div className={styles.content} style={{ x }}>
