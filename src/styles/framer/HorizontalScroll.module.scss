@@ -17,10 +17,12 @@
 }
 .text-container {
   position: absolute;
-  top: 0;
+  top: 20px;
+
   display: flex;
   align-items: center;
   gap: 15px;
+  left: 0;
 }
 .text {
   position: relative;
