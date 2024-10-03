@@ -14,8 +14,36 @@ export const ProjectSection = () => {
             <h2 className={styles.heading}>{heading}</h2>
             <h2 className={styles['heading-brief']}>{briefHeading}</h2>
           </div>
+          <div className={styles.gallery}>
+            {content.map((data, i) => {
+              const { imageUrl, linkUrl, title, description, alt } = data;
 
-          <HorizontalScroll>
+              return (
+                <div key={imageUrl} className={styles.card}>
+                  <div className={styles['img-wrapper']}>
+                    <Image
+                      src={imageUrl}
+                      fill
+                      alt={alt}
+                      className={styles.img}
+                      placeholder="blur"
+                      blurDataURL={blurDataUrls[i]}
+                    />
+                  </div>
+                  <div className={styles['title-wrapper']}>
+                    <p className={styles.title}>
+                      <Link href={linkUrl} className={styles.link}>
+                        {title}
+                      </Link>
+                    </p>
+                    <p className={styles.count}>(0{i + 1})</p>
+                  </div>
+                  <p className={styles.description}>{description}</p>
+                </div>
+              );
+            })}
+          </div>
+          <HorizontalScroll className={styles.carousel}>
             {content.map((data, i) => {
               const { imageUrl, linkUrl, title, description, alt } = data;
 

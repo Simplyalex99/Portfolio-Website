@@ -3,14 +3,17 @@
   margin-bottom: 0 !important;
   padding: 4em 0;
 }
-
+.carousel {
+  display: none;
+}
 .heading {
   display: none;
 }
 .heading-brief {
   font-weight: 500;
   font-size: 1.4rem;
-  margin-bottom: 2em;
+  margin-bottom: 4em;
+  text-align: center;
 }
 
 .container {
@@ -72,7 +75,30 @@
   color: #8c8c8c;
   margin-top: 1em;
 }
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 1.5em;
+}
+.card {
+  min-width: 100%;
+}
+@media (min-width: 600px) {
+  .card {
+    min-width: 500px;
+  }
+}
+
 @media (min-width: 800px) {
+  .gallery {
+    display: none;
+  }
+  .carousel {
+    display: block;
+  }
   .content {
     max-width: 1000px;
   }
@@ -84,8 +110,6 @@
 
     margin-bottom: 2em;
     display: block;
-  }
-  .card {
-    min-width: 500px;
+    font-size: 1.8rem;
   }
 }
